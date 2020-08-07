@@ -11,6 +11,7 @@ import {MainlayoutModule} from "./layouts/mainlayout/mainlayout.module";
   declarations: [
     AppComponent,
 
+
   ],
   imports: [
     BrowserModule,
