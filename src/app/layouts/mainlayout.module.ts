@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {MainlayoutComponent} from "./mainlayout.component";
-import {DashboardComponent} from "../../content/dashboard/dashboard.component";
+import {MainlayoutComponent} from "./mainlayout/mainlayout.component";
+import {DashboardComponent} from "../content/dashboard/dashboard.component";
 import {RouterModule} from "@angular/router";
-import {FooterComponent} from "../../shared/components/footer/footer.component";
-import {HeaderComponent} from "../../shared/components/header/header.component";
-import {SidebarComponent} from "../../shared/components/sidebar/sidebar.component";
+import {FooterComponent} from "../shared/components/footer/footer.component";
+import {HeaderComponent} from "../shared/components/header/header.component";
+import {SidebarComponent} from "../shared/components/sidebar/sidebar.component";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatDividerModule} from "@angular/material/divider";
 import {MatToolbarModule} from "@angular/material/toolbar";
@@ -20,7 +20,6 @@ import {MatListModule} from "@angular/material/list";
 @NgModule({
   declarations: [
     MainlayoutComponent,
-    DashboardComponent,
     FooterComponent,
     HeaderComponent,
     SidebarComponent
