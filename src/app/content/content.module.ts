@@ -4,6 +4,7 @@ import {DashboardComponent} from "./dashboard/dashboard.component";
 import {EmployeesComponent} from "./employees/employees.component";
 import { CalendarComponent } from './calendar/calendar.component';
 import {MatDividerModule} from "@angular/material/divider";
+import {MatTableModule} from "@angular/material/table";
 
 
 
@@ -15,7 +16,8 @@ import {MatDividerModule} from "@angular/material/divider";
   ],
   imports: [
     CommonModule,
-    MatDividerModule
+    MatDividerModule,
+    MatTableModule
   ]
 })
 export class ContentModule { }
