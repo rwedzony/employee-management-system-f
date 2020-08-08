@@ -5,6 +5,8 @@ import {EmployeesComponent} from "./employees/employees.component";
 import { CalendarComponent } from './calendar/calendar.component';
 import {MatDividerModule} from "@angular/material/divider";
 import {MatTableModule} from "@angular/material/table";
+import {MatSortModule} from "@angular/material/sort";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 
 
@@ -17,7 +19,9 @@ import {MatTableModule} from "@angular/material/table";
   imports: [
     CommonModule,
     MatDividerModule,
-    MatTableModule
+    MatTableModule,
+    MatSortModule,
+    BrowserAnimationsModule
   ]
 })
 export class ContentModule { }
