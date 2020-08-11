@@ -18,7 +18,7 @@ import { MatSort } from '@angular/material/sort';
 export class EmployeesComponent implements OnInit {
 
   ELEMENT_DATA: Employee[];
-  displayedColumns: string[] = ['id', 'firstName', 'lastName', 'email','role'];
+  displayedColumns: string[] = ['id', 'firstName', 'lastName', 'email','role','actions'];
 
   dataSource = new MatTableDataSource<Employee>(this.ELEMENT_DATA);
 
@@ -33,6 +33,7 @@ export class EmployeesComponent implements OnInit {
     this.getAllEmployees();
   }
   public getAllEmployees(){
+    alert('geeting employees!');
     let resp=this.employeeService.getEmployees();
     resp.subscribe(employees=>this.dataSource.data=employees as Employee[])
   }
