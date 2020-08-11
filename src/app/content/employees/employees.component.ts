@@ -3,6 +3,7 @@ import {EmployeeService} from "../../services/employee.service";
 import {Employee} from "../../datamodels/employee";
 import {MatTableDataSource} from "@angular/material/table";
 import {MatPaginator} from "@angular/material/paginator";
+import { MatSort } from '@angular/material/sort';
 
 
 
@@ -22,11 +23,13 @@ export class EmployeesComponent implements OnInit {
   dataSource = new MatTableDataSource<Employee>(this.ELEMENT_DATA);
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
+  @ViewChild(MatSort, {static: true}) sort: MatSort;
 
   constructor(private employeeService: EmployeeService) {}
 
   ngOnInit() {
     this.dataSource.paginator=this.paginator;
+    this.dataSource.sort=this.sort;
     this.getAllEmployees();
   }
   public getAllEmployees(){
