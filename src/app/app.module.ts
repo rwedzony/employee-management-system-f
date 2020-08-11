@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MainlayoutModule} from "./layouts/mainlayout.module";
 import {ContentModule} from "./content/content.module";
+import {HttpClientModule} from "@angular/common/http";
 
 
 
@@ -19,6 +20,7 @@ import {ContentModule} from "./content/content.module";
         BrowserAnimationsModule,
         MainlayoutModule,
         ContentModule,
+        HttpClientModule
     ],
     providers: [],
     exports: [
