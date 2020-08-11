@@ -1,5 +1,9 @@
 <div class="mat-elevation-z8">
-<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+<mat-form-field>
+  <mat-label>Filter</mat-label>
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search for">
+</mat-form-field>
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
   <!-- Id Column -->
   <ng-container matColumnDef="id">
     <th mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>

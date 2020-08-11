@@ -36,6 +36,9 @@ export class EmployeesComponent implements OnInit {
     let resp=this.employeeService.getEmployees();
     resp.subscribe(employees=>this.dataSource.data=employees as Employee[])
   }
+  applyFilter(filterValue: string){
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
 
 }
 
