@@ -41,6 +41,17 @@ export class EmployeesComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
+  editEmployee(i: number) {
+    console.log("in edit employee function with index: " +i);
+  }
+
+  deleteEmployee(i: number) {
+    console.log("in delete employee function with index: " +i);
+  }
+
+  addEmployee() {
+    console.log("in add Employee function: ");
+  }
 }
 
 
