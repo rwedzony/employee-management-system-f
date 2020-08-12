@@ -7,6 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MainlayoutModule} from "./layouts/mainlayout.module";
 import {ContentModule} from "./content/content.module";
 import {HttpClientModule} from "@angular/common/http";
+import {RouterModule} from "@angular/router";
+
 
 
 
@@ -20,7 +22,8 @@ import {HttpClientModule} from "@angular/common/http";
         BrowserAnimationsModule,
         MainlayoutModule,
         ContentModule,
-        HttpClientModule
+        HttpClientModule,
+        RouterModule
     ],
     providers: [],
     exports: [
