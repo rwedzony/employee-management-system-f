@@ -21,6 +21,7 @@ import {UpdateEmpDialogComponent} from "../employee_dialogs/update/update-emp-di
 
 
 
+
 @NgModule({
   declarations: [
     DashboardComponent,
@@ -28,7 +29,7 @@ import {UpdateEmpDialogComponent} from "../employee_dialogs/update/update-emp-di
     CalendarComponent,
     DeleteEmpDialogComponent,
     AddEmpDialogComponent,
-    UpdateEmpDialogComponent
+    UpdateEmpDialogComponent,
   ],
   imports: [
     CommonModule,
@@ -47,7 +48,7 @@ import {UpdateEmpDialogComponent} from "../employee_dialogs/update/update-emp-di
   entryComponents: [
     DeleteEmpDialogComponent,
     AddEmpDialogComponent,
-    UpdateEmpDialogComponent
+    UpdateEmpDialogComponent,
   ],
 })
 export class ContentModule { }

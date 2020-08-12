@@ -8,8 +8,6 @@ import {MainlayoutModule} from "./layouts/mainlayout.module";
 import {ContentModule} from "./content/content.module";
 import {HttpClientModule} from "@angular/common/http";
 import {RouterModule} from "@angular/router";
-import { AddEmpDialogComponent } from './employee_dialogs/add/add-emp-dialog.component';
-import { UpdateEmpDialogComponent } from './employee_dialogs/update/update-emp-dialog.component';
 
 
 
@@ -17,8 +15,7 @@ import { UpdateEmpDialogComponent } from './employee_dialogs/update/update-emp-d
 @NgModule({
     declarations: [
         AppComponent,
-        AddEmpDialogComponent,
-        UpdateEmpDialogComponent,
+
     ],
     imports: [
         BrowserModule,
