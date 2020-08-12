@@ -15,6 +15,8 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import {MatDialogModule} from "@angular/material/dialog";
 import {DeleteEmpDialogComponent} from "../employee_dialogs/delete/delete-emp-dialog.component";
+import {AddEmpDialogComponent} from "../employee_dialogs/add/add-emp-dialog.component";
+import {UpdateEmpDialogComponent} from "../employee_dialogs/update/update-emp-dialog.component";
 
 
 
@@ -24,7 +26,9 @@ import {DeleteEmpDialogComponent} from "../employee_dialogs/delete/delete-emp-di
     DashboardComponent,
     EmployeesComponent,
     CalendarComponent,
-    DeleteEmpDialogComponent
+    DeleteEmpDialogComponent,
+    AddEmpDialogComponent,
+    UpdateEmpDialogComponent
   ],
   imports: [
     CommonModule,
@@ -41,7 +45,9 @@ import {DeleteEmpDialogComponent} from "../employee_dialogs/delete/delete-emp-di
     MatDialogModule,
   ],
   entryComponents: [
-    DeleteEmpDialogComponent
+    DeleteEmpDialogComponent,
+    AddEmpDialogComponent,
+    UpdateEmpDialogComponent
   ],
 })
 export class ContentModule { }
