@@ -34,4 +34,7 @@ export class UpdateEmpDialogComponent implements OnInit {
       this.employeeService.updateEmployee(this.employee);
       this.dialogRef.close();
   }
+  submit(){
+
+  }
 }

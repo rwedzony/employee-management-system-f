@@ -8,6 +8,7 @@ import {MainlayoutModule} from "./layouts/mainlayout.module";
 import {ContentModule} from "./content/content.module";
 import {HttpClientModule} from "@angular/common/http";
 import {RouterModule} from "@angular/router";
+import { LoginComponent } from './authentification/login/login.component';
 
 
 
@@ -15,6 +16,7 @@ import {RouterModule} from "@angular/router";
 @NgModule({
     declarations: [
         AppComponent,
+        LoginComponent,
 
     ],
     imports: [

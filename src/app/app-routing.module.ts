@@ -4,9 +4,13 @@ import {MainlayoutComponent} from "./layouts/mainlayout/mainlayout.component";
 import {DashboardComponent} from "./content/dashboard/dashboard.component";
 import {EmployeesComponent} from "./content/employees/employees.component";
 import {CalendarComponent} from "./content/calendar/calendar.component";
+import {LoginComponent} from "./authentification/login/login.component";
 
 const routes: Routes = [{
- path: '',
+  path: 'login',
+  component: LoginComponent},
+  {
+  path: '',
  component: MainlayoutComponent,
  children:[{
    path: '',
