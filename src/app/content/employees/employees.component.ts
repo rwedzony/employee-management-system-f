@@ -6,6 +6,9 @@ import {MatPaginator} from "@angular/material/paginator";
 import { MatSort } from '@angular/material/sort';
 import { MatDialog } from '@angular/material/dialog';
 import {DeleteEmpDialogComponent} from "../../employee_dialogs/delete/delete-emp-dialog.component";
+import {AddEmpDialogComponent} from "../../employee_dialogs/add/add-emp-dialog.component";
+import { UpdateEmpDialogComponent } from 'src/app/employee_dialogs/update/update-emp-dialog.component';
+import {last} from "rxjs/operators";
 
 
 
@@ -38,7 +41,6 @@ export class EmployeesComponent implements OnInit {
     this.getAllEmployees();
   }
   public getAllEmployees(){
-    alert('geeting employees!');
     let resp=this.employeeService.getEmployees();
     resp.subscribe(employees=>this.dataSource.data=employees as Employee[])
   }
@@ -46,13 +48,17 @@ export class EmployeesComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  editEmployee(i: number) {
-    console.log("in edit employee function with index: " +i);
+  editDialogEmployee(id: number, firstName: string, lastName: string, email: string, role: string, currentMonthWorkingHours: number) {
+
+    const dialogRef=this.dialog.open(UpdateEmpDialogComponent,{data:{id: id,
+      firstName:firstName,lastName:lastName,email:email,role:role,currentMonthWorkingHours:currentMonthWorkingHours}});
+    dialogRef.afterClosed().subscribe(result => {
+      this.getAllEmployees();
+    });
   }
 
   deleteDialogEmployee(id: number) {
-    console.log("in delete employee function with id: " +id);
-    const dialogRef=this.dialog.open(DeleteEmpDialogComponent,{data:{id:id}});
+    const dialogRef=this.dialog.open(DeleteEmpDialogComponent,{data:{id: id}});
 
     dialogRef.afterClosed().subscribe(result => {
       this.getAllEmployees();
@@ -60,8 +66,20 @@ export class EmployeesComponent implements OnInit {
   }
 
 
-  addEmployee() {
-    console.log("in add Employee function: ");
+  addDialogEmployee() {
+
+    let employee = new Employee();
+    employee.id=0,
+    employee.firstName='';
+    employee.lastName='';
+    employee.role='';
+    employee.currentMonthWorkingHours=0;
+
+    const dialogRef=this.dialog.open(AddEmpDialogComponent,{data:{nullemployee:employee}});
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.getAllEmployees();
+    });
   }
 }
 

@@ -17,6 +17,7 @@ import {MatDialogModule} from "@angular/material/dialog";
 import {DeleteEmpDialogComponent} from "../employee_dialogs/delete/delete-emp-dialog.component";
 import {AddEmpDialogComponent} from "../employee_dialogs/add/add-emp-dialog.component";
 import {UpdateEmpDialogComponent} from "../employee_dialogs/update/update-emp-dialog.component";
+import {FormsModule} from "@angular/forms";
 
 
 
@@ -44,6 +45,7 @@ import {UpdateEmpDialogComponent} from "../employee_dialogs/update/update-emp-di
     MatIconModule,
     MatButtonModule,
     MatDialogModule,
+    FormsModule,
   ],
   entryComponents: [
     DeleteEmpDialogComponent,
