@@ -9,6 +9,11 @@ import {ContentModule} from "./content/content.module";
 import {HttpClientModule} from "@angular/common/http";
 import {RouterModule} from "@angular/router";
 import { LoginComponent } from './authentification/login/login.component';
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatIconModule} from "@angular/material/icon";
+import {MatCardModule} from "@angular/material/card";
+import {MatInputModule} from "@angular/material/input";
+import {MatButtonModule} from "@angular/material/button";
 
 
 
@@ -19,15 +24,20 @@ import { LoginComponent } from './authentification/login/login.component';
         LoginComponent,
 
     ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        MainlayoutModule,
-        ContentModule,
-        HttpClientModule,
-        RouterModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MainlayoutModule,
+    ContentModule,
+    HttpClientModule,
+    RouterModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatCardModule,
+    MatInputModule,
+    MatButtonModule
+  ],
     providers: [],
     exports: [
     ],
