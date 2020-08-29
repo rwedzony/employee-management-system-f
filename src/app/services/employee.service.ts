@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import { Employee } from '../datamodels/employee';
 
@@ -8,6 +8,11 @@ import { Employee } from '../datamodels/employee';
 })
 export class EmployeeService {
   urlGet="http://localhost:8080/employees";
+
+   httpOptions = {
+    headers: new HttpHeaders({
+      'Access-Control-Allow-Origin':'*',
+    })};
 
   constructor(private httpClient:HttpClient) {
   }
@@ -18,7 +23,7 @@ export class EmployeeService {
   public deleteEmployeesById(id: number){
     let urlDelete=this.urlGet+'/'+id.toString();
     console.log("Delete link  is as follows: "+urlDelete);
-    this.httpClient.delete(urlDelete).subscribe(
+    this.httpClient.delete(urlDelete,this.httpOptions).subscribe(
       (value) => {console.log('Received value: ',value)},
       (error) => {console.log('Error!!',error)},
       ()=>{console.log('end of values')}

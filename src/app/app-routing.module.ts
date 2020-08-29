@@ -7,13 +7,15 @@ import {CalendarComponent} from "./content/calendar/calendar.component";
 import {LoginComponent} from "./authentification/login/login.component";
 
 const routes: Routes = [{
-  path: 'login',
+  path: '', redirectTo: 'login',pathMatch:"full"},
+  {path: 'login',
   component: LoginComponent},
+
   {
-  path: '',
+  path: 'ems',
  component: MainlayoutComponent,
  children:[{
-   path: '',
+   path: 'dashboard',
    component: DashboardComponent},
    {
    path: 'employees',
