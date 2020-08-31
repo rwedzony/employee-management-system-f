@@ -5,6 +5,7 @@ import {DashboardComponent} from "./content/dashboard/dashboard.component";
 import {EmployeesComponent} from "./content/employees/employees.component";
 import {CalendarComponent} from "./content/calendar/calendar.component";
 import {LoginComponent} from "./authentification/login/login.component";
+import {AuthGuard} from "./services/auth-guard";
 
 const routes: Routes = [{
   path: '', redirectTo: 'login',pathMatch:"full"},
@@ -13,18 +14,18 @@ const routes: Routes = [{
 
   {
   path: 'ems',
- component: MainlayoutComponent,
+ component: MainlayoutComponent, canActivate: [AuthGuard],
  children:[{
    path: 'dashboard',
-   component: DashboardComponent},
+   component: DashboardComponent, canActivate: [AuthGuard]},
    {
    path: 'employees',
-   component: EmployeesComponent},
+   component: EmployeesComponent, canActivate: [AuthGuard]},
    {
      path: 'calendar',
-     component: CalendarComponent},
+     component: CalendarComponent, canActivate: [AuthGuard]},
  ]
-}
+},
 ];
 
 @NgModule({

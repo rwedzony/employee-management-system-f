@@ -48,4 +48,8 @@ export class AuthService {
     this.localStorage.clear('lastName');
     this.localStorage.clear('role');
   }
+
+  isLoggedIn(): boolean {
+    return this.getJwtToken() != null;
+  }
 }
