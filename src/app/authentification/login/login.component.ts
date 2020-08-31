@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
- import {AuthenticationService} from "../../services/authentication.service";
+ import {AuthService} from "../../services/auth.service";
 import { Router, ActivatedRoute } from '@angular/router';
+import {LoginRequestPayload} from "../../datamodels/login-request.payload";
+
 
 @Component({
   selector: 'app-login',
@@ -9,13 +11,18 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  username: string;
-  password : string;
-  message: any;
 
-  constructor(private route: ActivatedRoute,
-              private router: Router,
-              private authenticationService: AuthenticationService) { }
+
+  username='';
+  password='';
+  loginPayload: LoginRequestPayload;
+
+
+  constructor(private router: Router,
+              private authService: AuthService) {
+    this.loginPayload = {username:'', password: ''};
+
+  }
   hide=true;
 
   ngOnInit(): void {
@@ -24,13 +31,13 @@ export class LoginComponent implements OnInit {
 
   }
   signIn() {
-  let response=this.authenticationService.login(this.username,this.password);
-  response.subscribe(data=>{
-    this.message = data;
-    this.router.navigate(['/ems/dashboard'])
-  })
-
- // console.log(data))
+    this.authService.login(this.loginPayload).subscribe( data => {
+      alert('login succesfull!!');
+        this.router.navigateByUrl('ems/dashboard');
+    },
+      error => {
+      console.error('BAD CREDENTIALS');
+      });
 
 }
 

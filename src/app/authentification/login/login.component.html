@@ -8,13 +8,13 @@
     <p>Log in to EMS</p>
   <mat-form-field  appearance="fill">
     <mat-label>Enter your email</mat-label>
-    <input matInput [(ngModel)]="username"  name="username">
+    <input matInput [(ngModel)]="loginPayload.username"  name="username">
 
   </mat-form-field>
   <br>
   <mat-form-field appearance="fill">
     <mat-label>Enter your password</mat-label>
-    <input matInput [(ngModel)]="password"  [type]="hide ? 'password' : 'text'"  name="password">
+    <input matInput [(ngModel)]="loginPayload.password"  [type]="hide ? 'password' : 'text'"  name="password">
     <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
       <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
     </button>

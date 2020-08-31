@@ -15,7 +15,8 @@ import {MatCardModule} from "@angular/material/card";
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
 import {FormsModule} from "@angular/forms";
-import {AuthenticationService} from "./services/authentication.service";
+import {NgxWebstorageModule} from 'ngx-webstorage';
+import {AuthService} from "./services/auth.service";
 
 
 
@@ -39,9 +40,10 @@ import {AuthenticationService} from "./services/authentication.service";
     MatCardModule,
     MatInputModule,
     MatButtonModule,
-    FormsModule
+    FormsModule,
+    NgxWebstorageModule.forRoot(),
   ],
-    providers: [AuthenticationService],
+    providers: [],
     exports: [
     ],
     bootstrap: [AppComponent]
