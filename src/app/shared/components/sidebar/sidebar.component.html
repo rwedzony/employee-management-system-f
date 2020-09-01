@@ -1,17 +1,38 @@
 <mat-nav-list>
   <div class="profile-card">
     <div class="header"></div>
-    <h2>Example User</h2>
-    <h4>exampleUser@user.pl</h4>
+    <h2>{{username}}</h2>
+    <h4>{{email}}</h4>
 
-    <img src="assets/img/admin1.png" alt="here should be admin/user img">
+    <div *ngIf="isAdmin; else elseUserImg">
+    <img  src="assets/img/admin1.png" alt="here should be admin img">
+    </div>
+
+    <ng-template #elseUserImg><img  src="assets/img/user.png" alt="here should be user img"></ng-template>
   </div>
 
   <mat-divider></mat-divider>
+
   <h2 matSubheader>App Links</h2>
-  <a mat-list-item routerLinkActive="list-item-active" routerLink="/ems/dashboard">Dashboard</a>
-  <a mat-list-item routerLinkActive="list-item-active" routerLink="/ems/employees">Employees</a>
-  <a mat-list-item routerLinkActive="list-item-active" routerLink="/ems/calendar">Calendar</a>
+
+  <div *ngIf="isAdmin; else elseUserLinks">
+  <!--  Admin app links  -->
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="">Dashboard</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="">Employee List</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="">Issues</a>
+    <a mat-list-item routerLinkActive="list-item-active" router Link="">Vacations</a>
+</div>
+  <ng-template #elseUserLinks>
+  <!--User App links -->
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="">Dashboard</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="">Edit Profile</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="">Tasks</a>
+    <a mat-list-item routerLinkActive="list-item-active" router Link="">Vacations Requests</a>
+  </ng-template>
+<!--  <a mat-list-item routerLinkActive="list-item-active" routerLink="/ems/dashboard">Dashboard</a>-->
+<!--  <a mat-list-item routerLinkActive="list-item-active" routerLink="/ems/employees">Employees</a>-->
+<!--  <a mat-list-item routerLinkActive="list-item-active" routerLink="/ems/calendar">Calendar</a>-->
+
   <mat-divider></mat-divider>
 
   <h2 matSubheader>Tools</h2>

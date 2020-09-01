@@ -9,9 +9,13 @@ import {AuthService} from "../../../services/auth.service";
 export class SidebarComponent implements OnInit {
 
   constructor(private authenticationService: AuthService) { }
-
   username:string;
+  email: string;
+  isAdmin: boolean;
   ngOnInit(): void {
+    this.username=this.authenticationService.getUserFirstName()+' '+this.authenticationService.getUserLastName();
+    this.email=this.authenticationService.getUserLogin();
+    this.isAdmin =this.authenticationService.getUserRole() ==="ROLE_ADMIN";
   }
 
 

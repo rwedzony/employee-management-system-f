@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import { Employee } from '../datamodels/employee';
+import {AuthService} from "./auth.service";
 
 @Injectable({
   providedIn: 'root'
@@ -11,14 +12,15 @@ export class EmployeeService {
 
    httpOptions = {
     headers: new HttpHeaders({
-      'Access-Control-Allow-Origin':'*',
+      'Access-Control-Allow-Origin': '*'
     })};
 
-  constructor(private httpClient:HttpClient) {
+  constructor(private httpClient:HttpClient,
+              private authService: AuthService) {
   }
 
-  public getEmployees(){
-   return this.httpClient.get(this.urlGet);
+  public getEmployees() {
+    return this.httpClient.get(this.urlGet);
   }
   public deleteEmployeesById(id: number){
     let urlDelete=this.urlGet+'/'+id.toString();

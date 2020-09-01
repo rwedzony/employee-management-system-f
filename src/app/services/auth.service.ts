@@ -22,13 +22,18 @@ export class AuthService {
 
   login(loginRequestPayload: LoginRequestPayload) {
 
+
     return this.httpClient.post<LoginResponsePayload>(this.loginURL,loginRequestPayload)
       .pipe(map(data => {
+        this.localStorage.store('login',loginRequestPayload.username);
         this.localStorage.store('token', data.authToken);
         this.localStorage.store('firstName', data.firstName);
         this.localStorage.store('lastName', data.lastName);
         this.localStorage.store('role', data.role);
       }));
+  }
+  getUserLogin(){
+    return this.localStorage.retrieve('login');
   }
   getJwtToken(){
     return this.localStorage.retrieve('token');
@@ -43,6 +48,7 @@ export class AuthService {
     return this.localStorage.retrieve('role');
   }
   logout() {
+    this.localStorage.clear('login');
     this.localStorage.clear('token');
     this.localStorage.clear('firstName');
     this.localStorage.clear('lastName');
