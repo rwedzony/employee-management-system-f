@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {DashboardComponent} from "./dashboard/dashboard.component";
 import {EmployeesComponent} from "./employees/employees.component";
-import { CalendarComponent } from './calendar/calendar.component';
 import {MatDividerModule} from "@angular/material/divider";
 import {MatTableModule} from "@angular/material/table";
 import {MatSortModule} from "@angular/material/sort";
@@ -18,6 +16,10 @@ import {DeleteEmpDialogComponent} from "../employee_dialogs/delete/delete-emp-di
 import {AddEmpDialogComponent} from "../employee_dialogs/add/add-emp-dialog.component";
 import {UpdateEmpDialogComponent} from "../employee_dialogs/update/update-emp-dialog.component";
 import {FormsModule} from "@angular/forms";
+import { DashboarduserComponent } from './user/dashboarduser/dashboarduser.component';
+import { EditprofileComponent } from './user/editprofile/editprofile.component';
+import { TasksComponent } from './user/tasks/tasks.component';
+import { VacationrequestsComponent } from './user/vacationrequests/vacationrequests.component';
 
 
 
@@ -25,12 +27,14 @@ import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
-    DashboardComponent,
     EmployeesComponent,
-    CalendarComponent,
     DeleteEmpDialogComponent,
     AddEmpDialogComponent,
     UpdateEmpDialogComponent,
+    DashboarduserComponent,
+    EditprofileComponent,
+    TasksComponent,
+    VacationrequestsComponent,
   ],
   imports: [
     CommonModule,

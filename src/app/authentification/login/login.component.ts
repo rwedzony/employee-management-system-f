@@ -33,7 +33,15 @@ export class LoginComponent implements OnInit {
   signIn() {
     this.authService.login(this.loginPayload).subscribe( data => {
       alert('login succesfull!!');
-        this.router.navigateByUrl('ems/dashboard');
+
+      let urlToNavigate:string;
+      if(this.authService.isAdmin()){
+        urlToNavigate='ems/dashboardadmin';
+      }
+      else {
+        urlToNavigate='ems/dashboarduser';
+      }
+        this.router.navigateByUrl(urlToNavigate);
     },
       error => {
       console.error('BAD CREDENTIALS');

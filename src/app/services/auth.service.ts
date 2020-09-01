@@ -58,4 +58,13 @@ export class AuthService {
   isLoggedIn(): boolean {
     return this.getJwtToken() != null;
   }
+  isAdmin(): boolean{
+    if(this.localStorage.retrieve('role') ==="ROLE_ADMIN")
+      return true;
+    else{
+      return false;
+    }
+
+  }
+
 }
