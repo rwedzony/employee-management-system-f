@@ -8,7 +8,7 @@ import {MainlayoutModule} from "./layouts/mainlayout.module";
 import {ContentModule} from "./content/content.module";
 import {HttpClientModule,HTTP_INTERCEPTORS} from "@angular/common/http";
 import {RouterModule, Routes} from "@angular/router";
-import { LoginComponent } from './authentification/login/login.component';
+import { LoginComponent } from './auth/login/login.component';
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatIconModule} from "@angular/material/icon";
 import {MatCardModule} from "@angular/material/card";

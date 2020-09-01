@@ -1,12 +1,12 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {EmployeeService} from "../../services/employee.service";
-import {Employee} from "../../datamodels/employee";
+import {EmployeeService} from "../../../services/employee.service";
+import {Employee} from "../../../datamodels/employee";
 import {MatTableDataSource} from "@angular/material/table";
 import {MatPaginator} from "@angular/material/paginator";
 import { MatSort } from '@angular/material/sort';
 import { MatDialog } from '@angular/material/dialog';
-import {DeleteEmpDialogComponent} from "../../employee_dialogs/delete/delete-emp-dialog.component";
-import {AddEmpDialogComponent} from "../../employee_dialogs/add/add-emp-dialog.component";
+import {DeleteEmpDialogComponent} from "../../../employee_dialogs/delete/delete-emp-dialog.component";
+import {AddEmpDialogComponent} from "../../../employee_dialogs/add/add-emp-dialog.component";
 import { UpdateEmpDialogComponent } from 'src/app/employee_dialogs/update/update-emp-dialog.component';
 import {last} from "rxjs/operators";
 

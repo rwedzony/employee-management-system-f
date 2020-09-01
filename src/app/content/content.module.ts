@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {EmployeesComponent} from "./employees/employees.component";
+import {EmployeesComponent} from "./admin/employees/employees.component";
 import {MatDividerModule} from "@angular/material/divider";
 import {MatTableModule} from "@angular/material/table";
 import {MatSortModule} from "@angular/material/sort";
@@ -18,10 +18,11 @@ import {UpdateEmpDialogComponent} from "../employee_dialogs/update/update-emp-di
 import {FormsModule} from "@angular/forms";
 import { DashboarduserComponent } from './user/dashboarduser/dashboarduser.component';
 import { EditprofileComponent } from './user/editprofile/editprofile.component';
-import { TasksComponent } from './user/tasks/tasks.component';
 import { VacationrequestsComponent } from './user/vacationrequests/vacationrequests.component';
-
-
+import { DashboardadminComponent } from './admin/dashboardadmin/dashboardadmin.component';
+import { TasksuserComponent } from './user/tasksuser/tasksuser.component';
+import { TasksadminComponent } from './admin/tasksadmin/tasksadmin.component';
+import { VacationsComponent } from './admin/vacations/vacations.component';
 
 
 
@@ -33,8 +34,11 @@ import { VacationrequestsComponent } from './user/vacationrequests/vacationreque
     UpdateEmpDialogComponent,
     DashboarduserComponent,
     EditprofileComponent,
-    TasksComponent,
     VacationrequestsComponent,
+    DashboardadminComponent,
+    TasksuserComponent,
+    TasksadminComponent,
+    VacationsComponent,
   ],
   imports: [
     CommonModule,

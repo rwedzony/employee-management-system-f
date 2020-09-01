@@ -17,21 +17,19 @@
 
   <div *ngIf="isAdmin; else elseUserLinks">
   <!--  Admin app links  -->
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="">Dashboard</a>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="">Employee List</a>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="">Issues</a>
-    <a mat-list-item routerLinkActive="list-item-active" router Link="">Vacation</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/ems/dashboardadmin">Dashboard</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/ems/employees">Employee List</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/ems/tasksadmin">Tasks</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/ems/vacations">Vacation</a>
 </div>
   <ng-template #elseUserLinks>
   <!--User App links -->
     <a mat-list-item routerLinkActive="list-item-active" routerLink="/ems/dashboarduser">Dashboard</a>
     <a mat-list-item routerLinkActive="list-item-active" routerLink="/ems/edit">Edit Profile</a>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/ems/tasks">Tasks</a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/ems/tasksuser">Tasks</a>
     <a mat-list-item routerLinkActive="list-item-active" routerLink="/ems/vacationreq">Vacation Request</a>
   </ng-template>
-<!--  <a mat-list-item routerLinkActive="list-item-active" routerLink="/ems/dashboard">Dashboard</a>-->
-<!--  <a mat-list-item routerLinkActive="list-item-active" routerLink="/ems/employees">Employees</a>-->
-<!--  <a mat-list-item routerLinkActive="list-item-active" routerLink="/ems/calendar">Calendar</a>-->
+
 
   <mat-divider></mat-divider>
 
