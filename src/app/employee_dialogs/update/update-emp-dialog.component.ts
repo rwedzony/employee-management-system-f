@@ -22,7 +22,7 @@ export class UpdateEmpDialogComponent implements OnInit {
     this.employee.firstName=this.data.firstName;
     this.employee.lastName=this.data.lastName;
     this.employee.email=this.data.email;
-    this.employee.role=this.data.role;
+    this.employee.occupation=this.data.occupaton;
     this.employee.currentMonthWorkingHours= this.data.currentMonthWorkingHours;
   }
 

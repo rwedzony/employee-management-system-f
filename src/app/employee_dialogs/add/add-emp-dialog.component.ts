@@ -21,7 +21,7 @@ export class AddEmpDialogComponent implements OnInit {
     this.employee.firstName='';
     this.employee.lastName='';
     this.employee.email='';
-    this.employee.role='';
+    this.employee.occupation='';
     this.employee.currentMonthWorkingHours= 168;
 
   }

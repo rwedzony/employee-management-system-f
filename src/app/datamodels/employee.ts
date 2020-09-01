@@ -3,6 +3,9 @@ export class Employee {
   firstName: string;
   lastName: string;
   email: string;
-  role: string;
+  salary: number;
+  occupation: string;
+  empAuthLevel: string;
   currentMonthWorkingHours: number;
+  remainingDayOffs: number;
 }

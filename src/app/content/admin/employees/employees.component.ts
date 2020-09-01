@@ -8,7 +8,7 @@ import { MatDialog } from '@angular/material/dialog';
 import {DeleteEmpDialogComponent} from "../../../employee_dialogs/delete/delete-emp-dialog.component";
 import {AddEmpDialogComponent} from "../../../employee_dialogs/add/add-emp-dialog.component";
 import { UpdateEmpDialogComponent } from 'src/app/employee_dialogs/update/update-emp-dialog.component';
-import {last} from "rxjs/operators";
+
 
 
 
@@ -23,7 +23,9 @@ import {last} from "rxjs/operators";
 export class EmployeesComponent implements OnInit {
 
   ELEMENT_DATA: Employee[];
-  displayedColumns: string[] = ['id', 'firstName', 'lastName', 'email','role','actions'];
+  displayedColumns: string[] = ['firstName', 'lastName',
+    'email','salary','occupation','empAuthLevel','currentMonthWorkingHours',
+    'remainingDayOffs','actions'];
 
   dataSource = new MatTableDataSource<Employee>(this.ELEMENT_DATA);
   data={name:"Kate",
@@ -72,7 +74,7 @@ export class EmployeesComponent implements OnInit {
     employee.id=0,
     employee.firstName='';
     employee.lastName='';
-    employee.role='';
+    employee.occupation='';
     employee.currentMonthWorkingHours=0;
 
     const dialogRef=this.dialog.open(AddEmpDialogComponent,{data:{nullemployee:employee}});
