@@ -12,6 +12,7 @@ export class SidebarComponent implements OnInit {
   username:string;
   email: string;
   isAdmin: boolean
+
   ngOnInit(): void {
     this.username=this.authenticationService.getUserFirstName()+' '+this.authenticationService.getUserLastName();
     this.email=this.authenticationService.getUserLogin();

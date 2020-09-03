@@ -30,10 +30,11 @@ export class TaskService {
     let taskoperation = new Taskoperation();
     taskoperation.status="DONE"
 
-    this.httpClient.patch(url,taskoperation).subscribe(
-      (value) => {console.log('Received value: ',value)},
-      (error) => {console.log('Error!!',error)},
-      ()=>{console.log('end of values')});
+    // this.httpClient.patch(url,taskoperation).subscribe(
+    //   (value) => {console.log('Received value: ',value)},
+    //   (error) => {console.log('Error!!',error)},
+    //   ()=>{console.log('end of values')});
+    return this.httpClient.patch(url,taskoperation)
   }
 
 

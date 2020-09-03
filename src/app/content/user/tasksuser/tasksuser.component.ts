@@ -44,7 +44,10 @@ export class TasksuserComponent implements OnInit {
   }
 
   completeTask(id: number) {
-    this.taskService.updateTask(id,"DONE");
-    this.getAllEmployeeTask();
+    let resp=this.taskService.updateTask(id,"DONE");
+    resp.subscribe( (value) => {this.getAllEmployeeTask();},
+          (error) => {console.log('Error!!',error)},
+      ()=>{console.log('end of values')});
+
   }
 }

@@ -1,3 +1,5 @@
+
+
 <div class="mat-elevation-z8">
   <mat-form-field>
     <mat-label>Filter</mat-label>
@@ -41,16 +43,20 @@
       <mat-header-cell *matHeaderCellDef>
       </mat-header-cell>
         <mat-cell *matCellDef="let row">
-        <button mat-icon-button color="primary" *ngIf="row.status=='DONE'" (click)="completeTask(row.id)">
+        <button mat-icon-button color="primary"  (click)="completeTask(row.id)">
           <mat-icon matTooltip="Click to mark task as completed">done</mat-icon>
         </button>
         </mat-cell>
 
     </ng-container>
-
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    <!-- HEADERS-->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns" [ngClass]="'header-styles'">
+      </tr>
+    <!-- ROWS-->
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+          [ngClass]="{'task-complete': row.status==='DONE','task-new': row.status==='NEW'}"></tr>
 
   </table>
   <mat-paginator [pageSizeOptions]="[10, 20]" showFirstLastButtons></mat-paginator>
 </div>
+

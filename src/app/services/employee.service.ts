@@ -4,6 +4,7 @@ import {Observable} from "rxjs";
 import { Employee } from '../datamodels/employee';
 import {AuthService} from "./auth.service";
 import {BaseurlService} from "./baseurl.service";
+import {Employeeuser} from "../datamodels/employeeuser";
 
 @Injectable({
   providedIn: 'root'
@@ -50,4 +51,10 @@ export class EmployeeService {
       (error) => {console.log('Error!!',error)},
       ()=>{console.log('end of values')});
   }
+
+  updatePatchEmployee(employeeuser: Employeeuser ) {
+    let urlPatch=this.urlGet+'/'+employeeuser.id.toString();
+    return this.httpClient.patch(urlPatch,employeeuser,this.httpOptions);
+  }
+
 }
