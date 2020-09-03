@@ -3,12 +3,14 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import { Employee } from '../datamodels/employee';
 import {AuthService} from "./auth.service";
+import {BaseurlService} from "./baseurl.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmployeeService {
-  urlGet="http://localhost:8080/employees";
+
+  urlGet: string;
 
    httpOptions = {
     headers: new HttpHeaders({
@@ -16,7 +18,8 @@ export class EmployeeService {
     })};
 
   constructor(private httpClient:HttpClient,
-              private authService: AuthService) {
+              private baseurl: BaseurlService) {
+    this.urlGet=baseurl.getBaseUrl()+'/employees'
   }
 
   public getEmployees() {

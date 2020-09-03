@@ -5,23 +5,24 @@ import {Employee} from "../datamodels/employee";
 import {LoginRequestPayload} from "../datamodels/login-request.payload";
 import {LoginResponsePayload} from "../datamodels/login-response.payload";
 import { LocalStorageService } from 'ngx-webstorage';
+import {BaseurlService} from "./baseurl.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
- // USER_NAME_SESSION_ATTRIBUTE_NAME = 'authenticatedUser'
- // URL_EMPLOYEES = 'http://localhost:8080/employees'
-  loginURL = 'http://localhost:8080/auth/login';
 
+  loginURL : string;
 
   constructor(private httpClient: HttpClient,
-              private localStorage: LocalStorageService) {
+              private localStorage: LocalStorageService,
+              private baseurl:BaseurlService) {
+    this.loginURL=this.baseurl.getBaseUrl()+'/auth/login'
   }
 
   login(loginRequestPayload: LoginRequestPayload) {
-
+   console.log('Login URL: '+ this.baseurl);
 
     return this.httpClient.post<LoginResponsePayload>(this.loginURL,loginRequestPayload)
       .pipe(map(data => {
