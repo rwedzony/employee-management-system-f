@@ -7,14 +7,20 @@ import {BaseurlService} from "./baseurl.service";
 })
 export class TaskService {
 
-  urlGet: string;
+  basicUrl: string
 
   constructor(private httpClient:HttpClient,
               private baseurl: BaseurlService) {
-    this.urlGet=baseurl.getBaseUrl()+'/tasks';
+    this.basicUrl=baseurl.getBaseUrl();
+
   }
-  public getTasks() {
-    return this.httpClient.get(this.urlGet);
+  public getAllTasks() {
+    let url=this.basicUrl+'/'+'tasks';
+    return this.httpClient.get(url);
+  }
+  public getEmployeeTasks(empID: number) {
+    let url=this.basicUrl+'/'+'employees'+'/'+empID+'/'+'tasks';
+    return this.httpClient.get(url);
   }
 
 }

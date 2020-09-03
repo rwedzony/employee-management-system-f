@@ -1,7 +1,7 @@
-export interface Task {
+export class Task {
   id: number;
   description: string;
   status: string;
   startDate: string;
-  endDate: number;
+  endDate: string;
 }

@@ -23,6 +23,7 @@ import { DashboardadminComponent } from './admin/dashboardadmin/dashboardadmin.c
 import { TasksuserComponent } from './user/tasksuser/tasksuser.component';
 import { TasksadminComponent } from './admin/tasksadmin/tasksadmin.component';
 import { VacationsComponent } from './admin/vacations/vacations.component';
+import {MatTooltipModule} from "@angular/material/tooltip";
 
 
 
@@ -40,21 +41,22 @@ import { VacationsComponent } from './admin/vacations/vacations.component';
     TasksadminComponent,
     VacationsComponent,
   ],
-  imports: [
-    CommonModule,
-    MatDividerModule,
-    MatTableModule,
-    MatSortModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    MatPaginatorModule,
-    MatInputModule,
-    MatFormFieldModule,
-    MatIconModule,
-    MatButtonModule,
-    MatDialogModule,
-    FormsModule,
-  ],
+    imports: [
+        CommonModule,
+        MatDividerModule,
+        MatTableModule,
+        MatSortModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
+        MatPaginatorModule,
+        MatInputModule,
+        MatFormFieldModule,
+        MatIconModule,
+        MatButtonModule,
+        MatDialogModule,
+        FormsModule,
+        MatTooltipModule,
+    ],
   entryComponents: [
     DeleteEmpDialogComponent,
     AddEmpDialogComponent,

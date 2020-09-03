@@ -28,14 +28,13 @@ export class EmployeesComponent implements OnInit {
     'remainingDayOffs','actions'];
 
   dataSource = new MatTableDataSource<Employee>(this.ELEMENT_DATA);
-  data={name:"Kate",
-        surname:"Nowak"};
+
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
   constructor(private employeeService: EmployeeService,
-              public dialog: MatDialog,) {}
+              public dialog: MatDialog) {}
 
   ngOnInit() {
     this.dataSource.paginator=this.paginator;

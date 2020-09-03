@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {filter, map} from "rxjs/operators";
-import {Employee} from "../datamodels/employee";
+
 import {LoginRequestPayload} from "../datamodels/login-request.payload";
 import {LoginResponsePayload} from "../datamodels/login-response.payload";
 import { LocalStorageService } from 'ngx-webstorage';
@@ -26,6 +26,7 @@ export class AuthService {
 
     return this.httpClient.post<LoginResponsePayload>(this.loginURL,loginRequestPayload)
       .pipe(map(data => {
+        this.localStorage.store('id',data.id);
         this.localStorage.store('login',loginRequestPayload.username);
         this.localStorage.store('token', data.authToken);
         this.localStorage.store('firstName', data.firstName);
@@ -48,7 +49,12 @@ export class AuthService {
   getUserRole(){
     return this.localStorage.retrieve('role');
   }
+  getUserId(){
+    return this.localStorage.retrieve('id');
+  }
+
   logout() {
+    this.localStorage.clear('id');
     this.localStorage.clear('login');
     this.localStorage.clear('token');
     this.localStorage.clear('firstName');
