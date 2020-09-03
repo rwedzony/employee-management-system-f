@@ -44,7 +44,7 @@ export class TasksuserComponent implements OnInit {
   }
 
   completeTask(id: number) {
-    alert('You want to mark task number: '+ id + 'as completed!');
-
+    this.taskService.updateTask(id,"DONE");
+    this.getAllEmployeeTask();
   }
 }
