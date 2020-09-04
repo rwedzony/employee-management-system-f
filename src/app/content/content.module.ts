@@ -27,6 +27,7 @@ import {MatTooltipModule} from "@angular/material/tooltip";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatTabsModule} from "@angular/material/tabs";
+import { AssigntaskdialogComponent } from './admin/assigntaskdialog/assigntaskdialog.component';
 
 
 
@@ -44,6 +45,7 @@ import {MatTabsModule} from "@angular/material/tabs";
     TasksuserComponent,
     TasksadminComponent,
     VacationsComponent,
+    AssigntaskdialogComponent,
   ],
   imports: [
     CommonModule,
