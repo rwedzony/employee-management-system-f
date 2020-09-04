@@ -57,7 +57,7 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumnsTa;"></tr>
 
   </table>
-  <mat-paginator [pageSizeOptions]="[10, 20]" showFirstLastButtons></mat-paginator>
+  <mat-paginator #firstPaginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
 </div>
 
 <!--LINE BREAK LINE BREAK LINE BREAK LINE BREAKLINE BREAK LINE BREAK LINE BREAK LINE BREAK -->
@@ -121,7 +121,7 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumnsTu;"></tr>
 
   </table>
-  <mat-paginator [pageSizeOptions]="[10, 20]" showFirstLastButtons></mat-paginator>
+  <mat-paginator #secondPaginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
 </div>
 <br>
 

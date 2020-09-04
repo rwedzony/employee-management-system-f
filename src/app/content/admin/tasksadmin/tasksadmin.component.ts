@@ -17,43 +17,57 @@ export class TasksadminComponent implements OnInit {
   constructor(private taskService: TaskService,
               private authService: AuthService) { }
 
-  ELEMENT_DATA_TU: Task[];
-
   ELEMENT_DATA_TA: TaskAssigned[];
 
-  displayedColumnsTu: string[] = ['id', 'description',
-    'status','startDate','endDate','actions'];
+  ELEMENT_DATA_TU: Task[];
 
   displayedColumnsTa: string[] = ['id', 'description',
     'status','startDate','endDate','actions'];
 
-  dataSourceTu = new MatTableDataSource<Task>(this.ELEMENT_DATA_TU);
+  displayedColumnsTu: string[] = ['id', 'description',
+    'status','startDate','endDate','actions'];
+
 
   dataSourceTa = new MatTableDataSource<TaskAssigned>(this.ELEMENT_DATA_TA);
 
-  @ViewChild(MatPaginator, {static: true}) paginatorTu: MatPaginator;
-  @ViewChild('table2', {read: MatSort, static: true}) sortTu: MatSort;
+  dataSourceTu = new MatTableDataSource<Task>(this.ELEMENT_DATA_TU);
 
-  @ViewChild(MatPaginator, {static: true}) paginatorTa: MatPaginator;
+  @ViewChild('firstPaginator', {static: true}) paginatorTa: MatPaginator;
   @ViewChild('table1', {read: MatSort, static: true}) sortTa: MatSort;
 
+
+  @ViewChild('secondPaginator', {static: true}) paginatorTu: MatPaginator;
+  @ViewChild('table2', {read: MatSort, static: true}) sortTu: MatSort;
+
+
+
   ngOnInit(): void {
-    this.dataSourceTu.paginator = this.paginatorTu;
+
     this.dataSourceTa.paginator=this.paginatorTa;
+    this.dataSourceTu.paginator = this.paginatorTu;
 
-    this.dataSourceTu.sort=this.sortTu;
+
     this.dataSourceTa.sort=this.sortTa;
+    this.dataSourceTu.sort=this.sortTu;
 
-    this.getAllUnassignedTasks();
+
     this.getAllassignedTasks();
+    this.getAllUnassignedTasks();
 
+  }
+
+  applyFilterTa(filterValue: string){
+    this.dataSourceTa.filter = filterValue.trim().toLowerCase();
   }
 
   applyFilterTu(filterValue: string){
     this.dataSourceTu.filter = filterValue.trim().toLowerCase();
   }
-  applyFilterTa(filterValue: string){
-    this.dataSourceTa.filter = filterValue.trim().toLowerCase();
+
+
+  private getAllassignedTasks() {
+    let resp=this.taskService.getAllassignedTasks();
+    resp.subscribe(tasks=>this.dataSourceTa.data=tasks as TaskAssigned[])
   }
 
   public getAllUnassignedTasks(){
@@ -61,10 +75,6 @@ export class TasksadminComponent implements OnInit {
     resp.subscribe(tasks=>this.dataSourceTu.data=tasks as Task[])
   }
 
-  private getAllassignedTasks() {
-    let resp=this.taskService.getAllassignedTasks();
-    resp.subscribe(tasks=>this.dataSourceTa.data=tasks as TaskAssigned[])
-  }
 
   addNewTask() {
     alert('Create new Task');
