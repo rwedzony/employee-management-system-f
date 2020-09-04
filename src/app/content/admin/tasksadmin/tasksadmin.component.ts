@@ -79,4 +79,8 @@ export class TasksadminComponent implements OnInit {
   addNewTask() {
     alert('Create new Task');
   }
+
+  assignTask(taskid:number) {
+    alert('assigned task button clicked. Task id to be assigned: '+taskid)
+  }
 }
