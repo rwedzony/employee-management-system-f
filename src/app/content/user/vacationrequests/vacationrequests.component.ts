@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-vacationrequests',
   templateUrl: './vacationrequests.component.html',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VacationrequestsComponent implements OnInit {
 
+  startDate='';
   constructor() { }
+
 
   ngOnInit(): void {
   }
 
+  AddVacation() {
+    alert('you clicked add vacation button!');
+  }
 }

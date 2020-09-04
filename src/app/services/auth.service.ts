@@ -22,7 +22,6 @@ export class AuthService {
   }
 
   login(loginRequestPayload: LoginRequestPayload) {
-   console.log('Login URL: '+ this.baseurl);
 
     return this.httpClient.post<LoginResponsePayload>(this.loginURL,loginRequestPayload)
       .pipe(map(data => {

@@ -24,6 +24,15 @@ export class TaskService {
     let url=this.basicUrl+'/'+'employees'+'/'+empID+'/'+'tasks';
     return this.httpClient.get(url);
   }
+  public getAllUnassignedTasks() {
+    let url=this.basicUrl+'/'+'tasks'+'/'+'unassigned';
+    return this.httpClient.get(url);
+  }
+
+  public getAllassignedTasks() {
+    let url=this.basicUrl+'/'+'tasks'+'/'+'assigned';
+    return this.httpClient.get(url);
+  }
 
   updateTask(taskId: number,operation:string) {
     let url=this.basicUrl+'/'+'tasks'+'/'+taskId;

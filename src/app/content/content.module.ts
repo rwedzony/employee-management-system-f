@@ -24,6 +24,10 @@ import { TasksuserComponent } from './user/tasksuser/tasksuser.component';
 import { TasksadminComponent } from './admin/tasksadmin/tasksadmin.component';
 import { VacationsComponent } from './admin/vacations/vacations.component';
 import {MatTooltipModule} from "@angular/material/tooltip";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatTabsModule} from "@angular/material/tabs";
+
 
 
 
@@ -41,22 +45,25 @@ import {MatTooltipModule} from "@angular/material/tooltip";
     TasksadminComponent,
     VacationsComponent,
   ],
-    imports: [
-        CommonModule,
-        MatDividerModule,
-        MatTableModule,
-        MatSortModule,
-        BrowserAnimationsModule,
-        HttpClientModule,
-        MatPaginatorModule,
-        MatInputModule,
-        MatFormFieldModule,
-        MatIconModule,
-        MatButtonModule,
-        MatDialogModule,
-        FormsModule,
-        MatTooltipModule,
-    ],
+  imports: [
+    CommonModule,
+    MatDividerModule,
+    MatTableModule,
+    MatSortModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    MatPaginatorModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatButtonModule,
+    MatDialogModule,
+    FormsModule,
+    MatTooltipModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    MatTabsModule,
+  ],
   entryComponents: [
     DeleteEmpDialogComponent,
     AddEmpDialogComponent,
