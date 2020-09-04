@@ -30,7 +30,7 @@ export class TaskService {
   }
 
   public getAllassignedTasks() {
-    let url=this.basicUrl+'/'+'tasks'+'/'+'assigned';
+    let url=this.basicUrl+'/'+'tasks'+'/'+'tasksdto';
     return this.httpClient.get(url);
   }
 

@@ -26,7 +26,7 @@ export class TasksadminComponent implements OnInit {
   ELEMENT_DATA_TU: Task[];
 
   displayedColumnsTa: string[] = ['id', 'description',
-    'status','startDate','endDate','actions'];
+    'status','startDate','endDate','employeeFirstName','employeeLastName','actions'];
 
   displayedColumnsTu: string[] = ['id', 'description',
     'status','startDate','endDate','actions'];

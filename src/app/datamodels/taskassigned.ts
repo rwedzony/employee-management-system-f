@@ -4,4 +4,6 @@ export class TaskAssigned {
   status: string;
   startDate: string;
   endDate: string;
+  employeeFirstName: string;
+  employeeLastName: string;
 }
