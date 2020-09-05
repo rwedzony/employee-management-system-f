@@ -59,6 +59,14 @@
         <button mat-icon-button color="primary" (click)="unassignTask(row.id)" >
           <mat-icon matTooltip="Uassign Task">clear</mat-icon>
         </button>
+
+        <button mat-icon-button color="accent" (click)="editTaskDialog(row.id)">
+          <mat-icon matTooltip="Edit Task">edit</mat-icon>
+        </button>
+
+        <button mat-icon-button color="accent" (click)="deleteTaskDialog(row.id)">
+          <mat-icon matTooltip="Delete Task">delete</mat-icon>
+        </button>
       </mat-cell>
 
     </ng-container>
@@ -120,8 +128,18 @@
       <mat-header-cell *matHeaderCellDef>
       </mat-header-cell>
       <mat-cell *matCellDef="let row">
-        <button mat-raised-button color="primary" (click)="assignTask(row.id)">Assign Task
+        <button mat-raised-button color="primary" matTooltip="Assign Task to Employee"
+                (click)="assignTask(row.id)">Assign Task
         </button>
+
+        <button mat-icon-button color="accent" (click)="editTaskDialog(row.id)">
+          <mat-icon matTooltip="Edit Task">edit</mat-icon>
+        </button>
+
+        <button mat-icon-button color="accent" (click)="deleteTaskDialog(row.id)">
+          <mat-icon matTooltip="Delete Task">delete</mat-icon>
+        </button>
+
       </mat-cell>
 
     </ng-container>

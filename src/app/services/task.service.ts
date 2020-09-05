@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {BaseurlService} from "./baseurl.service";
-import {Employee} from "../datamodels/employee";
 import {Taskoperation} from "../datamodels/taskoperation";
+import { Task } from '../datamodels/task';
 
 @Injectable({
   providedIn: 'root'
@@ -52,6 +52,14 @@ export class TaskService {
   assignTask(taskId:number, employeeId: number){
     let url=this.basicUrl+'/'+'tasks'+'/'+taskId;
     return this.httpClient.patch(url,{"employeeId": employeeId });
+  }
+
+  addTask(task: Task) {
+   let url=this.basicUrl+'/'+'tasks';
+    this.httpClient.post(url,task).subscribe(
+      (value) => {console.log('Received value: ',value)},
+      (error) => {console.log('Error!!',error)},
+      ()=>{console.log('end of values')});
   }
 
 

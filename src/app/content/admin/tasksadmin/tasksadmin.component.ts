@@ -9,6 +9,7 @@ import {TaskAssigned} from "../../../datamodels/taskassigned";
 import {UpdateEmpDialogComponent} from "../../../employee_dialogs/update/update-emp-dialog.component";
 import {MatDialog} from "@angular/material/dialog";
 import {AssigntaskdialogComponent} from "../assigntaskdialog/assigntaskdialog.component";
+import {AddtaskdialogComponent} from "../addtaskdialog/addtaskdialog.component";
 
 @Component({
   selector: 'app-tasksadmin',
@@ -79,17 +80,13 @@ export class TasksadminComponent implements OnInit {
     resp.subscribe(tasks=>this.dataSourceTu.data=tasks as Task[])
   }
 
-  //
-  // editDialogEmployee(id: number, firstName: string, lastName: string, email: string, role: string, currentMonthWorkingHours: number) {
-  //
-  //   const dialogRef=this.dialog.open(UpdateEmpDialogComponent,{data:{id: id,
-  //       firstName:firstName,lastName:lastName,email:email,role:role,currentMonthWorkingHours:currentMonthWorkingHours}});
-  //   dialogRef.afterClosed().subscribe(result => {
-  //     this.getAllEmployees();
-  //   });
-  // }
+
   addNewTask() {
-    alert('Create new Task');
+    const dialogRef=this.dialog.open(AddtaskdialogComponent);
+    dialogRef.afterClosed().subscribe(result => {
+      this.getAllUnassignedTasks();
+    });
+
   }
 
   assignTask(taskId: number) {
@@ -109,5 +106,13 @@ export class TasksadminComponent implements OnInit {
     this.getAllUnassignedTasks()},
        (error) => {alert('Connection Error!!'+ error)},
     );
+  }
+
+  deleteTaskDialog(id: any) {
+    alert('Task nr' + id + 'To be deleted');
+  }
+
+  editTaskDialog(id: any) {
+    alert('Task nr' + id + 'To be edited');
   }
 }
