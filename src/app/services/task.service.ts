@@ -43,7 +43,15 @@ export class TaskService {
     //   (value) => {console.log('Received value: ',value)},
     //   (error) => {console.log('Error!!',error)},
     //   ()=>{console.log('end of values')});
-    return this.httpClient.patch(url,taskoperation)
+    return this.httpClient.patch(url,taskoperation);
+  }
+  changeTaskAssigment(taskId: number,assign: boolean){
+    let url=this.basicUrl+'/'+'tasks'+'/'+taskId;
+    return this.httpClient.patch(url,{"assigned": assign });
+  }
+  assignTask(taskId:number, employeeId: number){
+    let url=this.basicUrl+'/'+'tasks'+'/'+taskId;
+    return this.httpClient.patch(url,{"employeeId": employeeId });
   }
 
 

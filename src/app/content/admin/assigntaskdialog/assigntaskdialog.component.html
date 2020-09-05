@@ -1,16 +1,21 @@
-<h3 mat-dialog-title>Assign Task</h3>
+<h3 mat-dialog-title>Assign Task to Employee</h3>
 
 <form class="mat-dialog-content" (ngSubmit)="submit" #formControl="ngForm">
 
-  <div class="form">
-    <mat-form-field color="accent">
-      <mat-label>First Name</mat-label>
-      <input matInput #input class="form-control" placeholder="first name"  name="firstName"  required >
-    </mat-form-field>
-  </div>
+  <mat-form-field appearance="fill">
+    <mat-label>Employee</mat-label>
+    <mat-select #Empselect>
+      <mat-option *ngFor="let emp of emptoDisplay" [value]="emp.id">
+        {{emp.firstName+' '+emp.lastName}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
 
   <div mat-dialog-actions>
-    <button mat-button color="primary" [type]="submit" [disabled]="!formControl.valid" [mat-dialog-close]="1" (click)="assignTask()">Assign Task</button>
+    <button mat-button color="primary" [type]="submit" [disabled]="!formControl.valid"
+            [mat-dialog-close]="1" (click)="assignTask(Empselect.value)">Assign Task</button>
     <button mat-button color="accent" (click)="onNoClick()" tabindex="-1">Cancel</button>
   </div>
 </form>
+<br>

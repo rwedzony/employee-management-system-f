@@ -28,6 +28,7 @@ import {MatDatepickerModule} from "@angular/material/datepicker";
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatTabsModule} from "@angular/material/tabs";
 import { AssigntaskdialogComponent } from './admin/assigntaskdialog/assigntaskdialog.component';
+import {MatSelectModule} from "@angular/material/select";
 
 
 
@@ -47,25 +48,26 @@ import { AssigntaskdialogComponent } from './admin/assigntaskdialog/assigntaskdi
     VacationsComponent,
     AssigntaskdialogComponent,
   ],
-  imports: [
-    CommonModule,
-    MatDividerModule,
-    MatTableModule,
-    MatSortModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
-    MatPaginatorModule,
-    MatInputModule,
-    MatFormFieldModule,
-    MatIconModule,
-    MatButtonModule,
-    MatDialogModule,
-    FormsModule,
-    MatTooltipModule,
-    MatNativeDateModule,
-    MatDatepickerModule,
-    MatTabsModule,
-  ],
+    imports: [
+        CommonModule,
+        MatDividerModule,
+        MatTableModule,
+        MatSortModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
+        MatPaginatorModule,
+        MatInputModule,
+        MatFormFieldModule,
+        MatIconModule,
+        MatButtonModule,
+        MatDialogModule,
+        FormsModule,
+        MatTooltipModule,
+        MatNativeDateModule,
+        MatDatepickerModule,
+        MatTabsModule,
+        MatSelectModule,
+    ],
   entryComponents: [
     DeleteEmpDialogComponent,
     AddEmpDialogComponent,

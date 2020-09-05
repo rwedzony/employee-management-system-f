@@ -56,8 +56,8 @@
       <mat-header-cell *matHeaderCellDef>
       </mat-header-cell>
       <mat-cell *matCellDef="let row">
-        <button mat-icon-button color="primary" >
-          <mat-icon matTooltip="Click to mark task as completed">done</mat-icon>
+        <button mat-icon-button color="primary" (click)="unassignTask(row.id)" >
+          <mat-icon matTooltip="Uassign Task">clear</mat-icon>
         </button>
       </mat-cell>
 

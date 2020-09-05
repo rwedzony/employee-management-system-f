@@ -92,14 +92,22 @@ export class TasksadminComponent implements OnInit {
     alert('Create new Task');
   }
 
-  assignTask(taskid: number) {
+  assignTask(taskId: number) {
    // const dialogRef=this.dialog.open(AssigntaskdialogComponent,{data:{id: id,
         //       firstName:firstName,lastName:lastName,email:email,role:role,currentMonthWorkingHours:currentMonthWorkingHours}});
 
-      const dialogRef=this.dialog.open(AssigntaskdialogComponent);
+      const dialogRef=this.dialog.open(AssigntaskdialogComponent,{data:{taskId: taskId}});
       dialogRef.afterClosed().subscribe(result => {
       this.getAllassignedTasks();
       this.getAllUnassignedTasks();
         });
+  }
+
+  unassignTask(id: number) {
+    let resp=this.taskService.changeTaskAssigment(id,false);
+    resp.subscribe( (value) => {this.getAllassignedTasks();
+    this.getAllUnassignedTasks()},
+       (error) => {alert('Connection Error!!'+ error)},
+    );
   }
 }
