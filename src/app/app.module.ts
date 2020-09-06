@@ -1,13 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 import {MainlayoutModule} from "./layouts/mainlayout.module";
 import {ContentModule} from "./content/content.module";
 import {HttpClientModule,HTTP_INTERCEPTORS} from "@angular/common/http";
-import {RouterModule, Routes} from "@angular/router";
+import {RouterModule} from "@angular/router";
 import { LoginComponent } from './auth/login/login.component';
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatIconModule} from "@angular/material/icon";
@@ -27,8 +28,8 @@ import {TokenInterceptorService} from "./services/token-interceptor.service";
     ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
+    AppRoutingModule,
     MainlayoutModule,
     ContentModule,
     HttpClientModule,
@@ -39,6 +40,7 @@ import {TokenInterceptorService} from "./services/token-interceptor.service";
     MatInputModule,
     MatButtonModule,
     FormsModule,
+    ToastrModule.forRoot(),
     NgxWebstorageModule.forRoot(),
   ],
     providers: [{

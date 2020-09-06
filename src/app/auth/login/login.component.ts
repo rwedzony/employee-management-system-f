@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
  import {AuthService} from "../../services/auth.service";
 import { Router, ActivatedRoute } from '@angular/router';
 import {LoginRequestPayload} from "../../datamodels/login-request.payload";
+import {ToastrService} from "ngx-toastr";
 
 
 @Component({
@@ -13,13 +14,12 @@ export class LoginComponent implements OnInit {
 
 
 
-  username='';
-  password='';
   loginPayload: LoginRequestPayload;
 
 
   constructor(private router: Router,
-              private authService: AuthService) {
+              private authService: AuthService,
+              private toastrService: ToastrService) {
     this.loginPayload = {username:'', password: ''};
 
   }
@@ -32,7 +32,9 @@ export class LoginComponent implements OnInit {
   }
   signIn() {
     this.authService.login(this.loginPayload).subscribe( data => {
-      alert('login succesfull!!');
+        this.toastrService.success("You are Logged in!","Success",{
+          timeOut:2000,
+        });
 
       let urlToNavigate:string;
       if(this.authService.isAdmin()){
@@ -44,7 +46,10 @@ export class LoginComponent implements OnInit {
         this.router.navigateByUrl(urlToNavigate);
     },
       error => {
-      console.error('BAD CREDENTIALS');
+        this.toastrService.error("Bad Credentials!","ERROR",{
+          timeOut:2000,
+          positionClass: 'toast-bottom-center',
+        });
       });
 
 }

@@ -1,3 +1,6 @@
+
+
+
 <div class="login-container">
 
   <form class="example-form" (ngSubmit)="submit">
@@ -5,22 +8,22 @@
 <div fxFlex fxLayout="column" fxLayoutAlign="flex-end">
 
 
-    <p>Log in to EMS</p>
-  <mat-form-field  appearance="fill">
+    <h2>Log in to EMS</h2>
+  <mat-form-field [style.width.px]=200  appearance="fill">
     <mat-label>Enter your email</mat-label>
-    <input matInput [(ngModel)]="loginPayload.username"  name="username">
+    <input matInput [(ngModel)]="loginPayload.username"  name="username" required>
 
   </mat-form-field>
   <br>
-  <mat-form-field appearance="fill">
+  <mat-form-field [style.width.px]=200 appearance="fill">
     <mat-label>Enter your password</mat-label>
-    <input matInput [(ngModel)]="loginPayload.password"  [type]="hide ? 'password' : 'text'"  name="password">
+    <input matInput [(ngModel)]="loginPayload.password"  [type]="hide ? 'password' : 'text'"  name="password" required>
     <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
       <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
     </button>
   </mat-form-field>
   <br>
-  <button mat-raised-button color="primary" type="submit"   (click)="signIn()">Log in</button>
+  <button mat-raised-button color="primary" type="submit"   (click)="signIn()" >Log in</button>
 </div>
 </mat-card>
   </form>
