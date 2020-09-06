@@ -3,6 +3,7 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {BaseurlService} from "./baseurl.service";
 import {Taskoperation} from "../datamodels/taskoperation";
 import { Task } from '../datamodels/task';
+import {Employee} from "../datamodels/employee";
 
 @Injectable({
   providedIn: 'root'
@@ -39,13 +40,30 @@ export class TaskService {
     return this.httpClient.get(url);
   }
 
-  updateTask(taskId: number,operation:string) {
+  public updateTask(taskId: number,operation:string) {
     let url=this.basicUrl+'/'+'tasks'+'/'+taskId;
     let taskoperation = new Taskoperation();
     taskoperation.status="DONE"
-
     return this.httpClient.patch(url,taskoperation);
   }
+
+  public updateCompleteTask(task: Task) {
+    let url=this.basicUrl+'/'+'tasks'+'/'+task.id.toString();
+    this.httpClient.put(url,task).subscribe(
+      (value) => {console.log('Received value: ',value)},
+      (error) => {console.log('Error!!',error)},
+      ()=>{console.log('end of values')});
+  }
+
+  // updateEmployee(employee: Employee) {
+  //   let urlPut=this.urlGet+'/'+employee.id.toString();
+  //   this.httpClient.put(urlPut,employee).subscribe(
+  //     (value) => {console.log('Received value: ',value)},
+  //     (error) => {console.log('Error!!',error)},
+  //     ()=>{console.log('end of values')});
+  // }
+
+
   changeTaskAssigment(taskId: number,assign: boolean){
     let url=this.basicUrl+'/'+'tasks'+'/'+taskId;
     return this.httpClient.patch(url,{"assigned": assign });
@@ -54,6 +72,7 @@ export class TaskService {
     let url=this.basicUrl+'/'+'tasks'+'/'+taskId;
     return this.httpClient.patch(url,{"employeeId": employeeId });
   }
+
 
   addTask(task: Task) {
    let url=this.basicUrl+'/'+'tasks';

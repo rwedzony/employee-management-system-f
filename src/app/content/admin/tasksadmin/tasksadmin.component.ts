@@ -12,6 +12,7 @@ import {AssigntaskdialogComponent} from "../assigntaskdialog/assigntaskdialog.co
 import {AddtaskdialogComponent} from "../addtaskdialog/addtaskdialog.component";
 import {DeleteEmpDialogComponent} from "../../../employee_dialogs/delete/delete-emp-dialog.component";
 import {DeletetaskdialogComponent} from "../deletetaskdialog/deletetaskdialog.component";
+import {EdittaskdialogComponent} from "../edittaskdialog/edittaskdialog.component";
 
 @Component({
   selector: 'app-tasksadmin',
@@ -120,7 +121,12 @@ export class TasksadminComponent implements OnInit {
 
   }
 
-  editTaskDialog(id: any) {
-    alert('Task nr' + id + 'To be edited');
+  editTaskDialog(id: number,description: string, status: string, startDate: string, endDate: string) {
+      const dialogRef=this.dialog.open(EdittaskdialogComponent,{data:{id: id,
+          description:description,status: status, startDate:startDate, endDate:endDate}});
+      dialogRef.afterClosed().subscribe(result => {
+        this.getAllassignedTasks();
+        this.getAllUnassignedTasks();
+      });
   }
 }

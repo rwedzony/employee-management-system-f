@@ -31,6 +31,7 @@ import { AssigntaskdialogComponent } from './admin/assigntaskdialog/assigntaskdi
 import {MatSelectModule} from "@angular/material/select";
 import { AddtaskdialogComponent } from './admin/addtaskdialog/addtaskdialog.component';
 import { DeletetaskdialogComponent } from './admin/deletetaskdialog/deletetaskdialog.component';
+import { EdittaskdialogComponent } from './admin/edittaskdialog/edittaskdialog.component';
 
 
 
@@ -51,6 +52,7 @@ import { DeletetaskdialogComponent } from './admin/deletetaskdialog/deletetaskdi
     AssigntaskdialogComponent,
     AddtaskdialogComponent,
     DeletetaskdialogComponent,
+    EdittaskdialogComponent,
   ],
     imports: [
         CommonModule,

@@ -21,8 +21,6 @@ export class AddtaskdialogComponent implements OnInit {
   taskStartDate:Date;
   taskEndDate:Date;
 
-  @ViewChild('picker1') picker: MatDatepicker<Date>
-
 
   ngOnInit(): void {
     this.taskStartDate=new Date();

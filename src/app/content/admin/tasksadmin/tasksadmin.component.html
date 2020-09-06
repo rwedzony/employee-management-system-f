@@ -60,7 +60,8 @@
           <mat-icon matTooltip="Uassign Task">clear</mat-icon>
         </button>
 
-        <button mat-icon-button color="accent" (click)="editTaskDialog(row.id)">
+        <button mat-icon-button color="accent" (click)="editTaskDialog(row.id, row.description
+        ,row.status,row.startDate,row.endDate)">
           <mat-icon matTooltip="Edit Task">edit</mat-icon>
         </button>
 
@@ -132,7 +133,8 @@
                 (click)="assignTask(row.id)">Assign Task
         </button>
 
-        <button mat-icon-button color="accent" (click)="editTaskDialog(row.id)">
+        <button mat-icon-button color="accent" (click)="editTaskDialog(row.id, row.description
+        ,row.status,row.startDate,row.endDate)">
           <mat-icon matTooltip="Edit Task">edit</mat-icon>
         </button>
 
