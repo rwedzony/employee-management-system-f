@@ -49,10 +49,6 @@ export class AddtaskdialogComponent implements OnInit {
     this.taskService.addTask(this.task);
     this.dialogRef.close();
 
-   // alert('Oto start data!'+this.taskStartDate.toLocaleDateString());
-  //  alert('Oto end data!'+this.taskEndDate.toLocaleDateString());
-    // this.employeeService.addEmployee(this.employee);
-   // this.dialogRef.close();
   }
   submit(){
 

@@ -30,6 +30,7 @@ import {MatTabsModule} from "@angular/material/tabs";
 import { AssigntaskdialogComponent } from './admin/assigntaskdialog/assigntaskdialog.component';
 import {MatSelectModule} from "@angular/material/select";
 import { AddtaskdialogComponent } from './admin/addtaskdialog/addtaskdialog.component';
+import { DeletetaskdialogComponent } from './admin/deletetaskdialog/deletetaskdialog.component';
 
 
 
@@ -49,6 +50,7 @@ import { AddtaskdialogComponent } from './admin/addtaskdialog/addtaskdialog.comp
     VacationsComponent,
     AssigntaskdialogComponent,
     AddtaskdialogComponent,
+    DeletetaskdialogComponent,
   ],
     imports: [
         CommonModule,

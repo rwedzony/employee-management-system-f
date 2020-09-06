@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {BaseurlService} from "./baseurl.service";
 import {Taskoperation} from "../datamodels/taskoperation";
 import { Task } from '../datamodels/task';
@@ -8,6 +8,11 @@ import { Task } from '../datamodels/task';
   providedIn: 'root'
 })
 export class TaskService {
+
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Access-Control-Allow-Origin': '*'
+    })};
 
   basicUrl: string
 
@@ -39,10 +44,6 @@ export class TaskService {
     let taskoperation = new Taskoperation();
     taskoperation.status="DONE"
 
-    // this.httpClient.patch(url,taskoperation).subscribe(
-    //   (value) => {console.log('Received value: ',value)},
-    //   (error) => {console.log('Error!!',error)},
-    //   ()=>{console.log('end of values')});
     return this.httpClient.patch(url,taskoperation);
   }
   changeTaskAssigment(taskId: number,assign: boolean){
@@ -63,4 +64,14 @@ export class TaskService {
   }
 
 
+  deleteTaskById(id: any) {
+    let url=this.basicUrl+'/'+'tasks'+'/'+id.toString();
+    console.log("Delete link  is as follows: "+url);
+    this.httpClient.delete(url).subscribe(
+      (value) => {console.log('Received value: ',value)},
+      (error) => {console.log('Error!!',error)},
+      ()=>{console.log('end of values')}
+    );
+
+  }
 }

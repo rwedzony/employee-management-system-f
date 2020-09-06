@@ -10,6 +10,8 @@ import {UpdateEmpDialogComponent} from "../../../employee_dialogs/update/update-
 import {MatDialog} from "@angular/material/dialog";
 import {AssigntaskdialogComponent} from "../assigntaskdialog/assigntaskdialog.component";
 import {AddtaskdialogComponent} from "../addtaskdialog/addtaskdialog.component";
+import {DeleteEmpDialogComponent} from "../../../employee_dialogs/delete/delete-emp-dialog.component";
+import {DeletetaskdialogComponent} from "../deletetaskdialog/deletetaskdialog.component";
 
 @Component({
   selector: 'app-tasksadmin',
@@ -108,8 +110,14 @@ export class TasksadminComponent implements OnInit {
     );
   }
 
-  deleteTaskDialog(id: any) {
-    alert('Task nr' + id + 'To be deleted');
+  deleteTaskDialog(id: number) {
+      const dialogRef=this.dialog.open(DeletetaskdialogComponent,{data:{id: id}});
+
+      dialogRef.afterClosed().subscribe(result => {
+        this.getAllUnassignedTasks();
+        this.getAllassignedTasks();
+      });
+
   }
 
   editTaskDialog(id: any) {
