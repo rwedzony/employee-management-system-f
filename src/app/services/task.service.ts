@@ -26,10 +26,44 @@ export class TaskService {
     let url=this.basicUrl+'/'+'tasks';
     return this.httpClient.get(url);
   }
+  public getAllTasksCount() {
+    let url=this.basicUrl+'/'+'tasks'+'/'+'count';
+    return this.httpClient.get(url);
+  }
+
+  public getAllUnATasksCount() {
+    let url=this.basicUrl+'/'+'tasks'+'/'+'unassigned'+'/'+'count';
+    return this.httpClient.get(url);
+  }
+
+  public getAllATasksCount() {
+    let url=this.basicUrl+'/'+'tasks'+'/'+'assigned'+'/'+'count';
+    return this.httpClient.get(url);
+  }
+
+  public getAllDoneTasksCount() {
+    let url=this.basicUrl+'/'+'tasks'+'/'+'done';
+    return this.httpClient.get(url);
+  }
+  public getAllNewTasksCount() {
+    let url=this.basicUrl+'/'+'tasks'+'/'+'new';
+    return this.httpClient.get(url);
+  }
+
+
+
+
+
+
+
+
+
   public getEmployeeTasks(empID: number) {
     let url=this.basicUrl+'/'+'employees'+'/'+empID+'/'+'tasks';
     return this.httpClient.get(url);
   }
+
+
 
   public getEmployeeTasksDone(empID: number) {
     let url=this.basicUrl+'/'+'employees'+'/'+empID+'/'+'tasks'+'/'+'done';
@@ -94,6 +128,8 @@ export class TaskService {
       (value) => {console.log('Received value: ',value)},
       (error) => {console.log('Error!!',error)},
       ()=>{console.log('end of values')});
+
+
   }
 
 

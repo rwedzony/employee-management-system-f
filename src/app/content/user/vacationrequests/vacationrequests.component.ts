@@ -16,6 +16,5 @@ export class VacationrequestsComponent implements OnInit {
   }
 
   AddVacation() {
-    alert('you clicked add vacation button!');
   }
 }

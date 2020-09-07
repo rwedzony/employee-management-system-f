@@ -44,7 +44,7 @@ export class AddtaskdialogComponent implements OnInit {
   confirmAdd(): void {
     this.task.startDate=this.taskStartDate.toLocaleDateString();
     this.task.endDate=this.taskEndDate.toLocaleDateString();
-    this.taskService.addTask(this.task);
+    this.taskService.addTask(this.task)
     this.dialogRef.close();
 
   }

@@ -82,19 +82,14 @@ export class EmployeesComponent implements OnInit {
 
 
   addDialogEmployee() {
-
-    let employee = new Employee();
-    employee.id=0,
-    employee.firstName='';
-    employee.lastName='';
-    employee.occupation='';
-    employee.currentMonthWorkingHours=0;
-
-    const dialogRef=this.dialog.open(AddEmpDialogComponent,{data:{nullemployee:employee}});
+    const dialogRef=this.dialog.open(AddEmpDialogComponent);
 
     dialogRef.afterClosed().subscribe(result => {
       this.getAllEmployees();
+
     });
+
+
   }
 }
 

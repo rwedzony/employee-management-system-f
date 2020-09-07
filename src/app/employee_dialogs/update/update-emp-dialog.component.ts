@@ -2,6 +2,7 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {EmployeeService} from "../../services/employee.service";
 import { Employee } from 'src/app/datamodels/employee';
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-update',
@@ -12,7 +13,8 @@ export class UpdateEmpDialogComponent implements OnInit {
 
   constructor(public dialogRef: MatDialogRef<UpdateEmpDialogComponent>,
               @Inject(MAT_DIALOG_DATA) public data: any,
-              private employeeService: EmployeeService) { }
+              private employeeService: EmployeeService,
+              private toastrService:ToastrService) { }
 
   employee: Employee;
 
@@ -34,7 +36,21 @@ export class UpdateEmpDialogComponent implements OnInit {
   }
 
   confirmEdit() {
-      this.employeeService.updateEmployee(this.employee);
+      this.employeeService.updateEmployee(this.employee).subscribe(
+
+        (value) => {
+          this.toastrService.success("Employee Successfully Updated!","Success",{
+            timeOut:2000,
+          });
+          },
+          (error) => {
+            this.toastrService.error("Connection Error during updating employee.","Error",{
+              timeOut:2000,
+            });
+          }
+
+      );
+
       this.dialogRef.close();
   }
   submit(){

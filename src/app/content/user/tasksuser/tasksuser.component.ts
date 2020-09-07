@@ -5,6 +5,7 @@ import {MatTableDataSource} from "@angular/material/table";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
 import {AuthService} from "../../../services/auth.service";
+import {ToastrService} from "ngx-toastr";
 
 
 @Component({
@@ -26,7 +27,8 @@ export class TasksuserComponent implements OnInit {
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
   constructor(private taskService: TaskService,
-              private authService: AuthService) { }
+              private authService: AuthService,
+              private toastrService: ToastrService) { }
 
   ngOnInit(): void {
     this.dataSource.paginator=this.paginator;
@@ -45,9 +47,15 @@ export class TasksuserComponent implements OnInit {
 
   completeTask(id: number) {
     let resp=this.taskService.updateTask(id,"DONE");
-    resp.subscribe( (value) => {this.getAllEmployeeTask();},
-          (error) => {console.log('Error!!',error)},
-      ()=>{console.log('end of values')});
+    resp.subscribe( (value) => {this.getAllEmployeeTask();
+        this.toastrService.success("You completed the Task!","Success",{
+          timeOut:2000,
+        });
+    },
+          (error) => {this.toastrService.success("Error occured during completing task","Error",{
+            timeOut:2000,
+          });},
+      );
 
   }
 }

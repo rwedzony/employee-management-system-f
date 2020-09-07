@@ -1,7 +1,22 @@
-
+<h2>{{this.authService.getUserFirstName()}}, this is your Dashboard </h2>
 <mat-tab-group>
-  <mat-tab label="Dashboard"> This is  Admin  Content 1 </mat-tab>
-  <mat-tab label="Tasks"> This is Admin Content 2 </mat-tab>
-  <mat-tab label="Vacation Requests"> This is Admin  Content 3 </mat-tab>
+  <mat-tab label="Dashboard">
+    <h3>Company information:</h3>
+    <h3>Currently you have: <span style="color: red;">{{employeeCount}}</span> employees </h3>
+    <h3>You spend <span style="color: red;">{{employeeWagesCount}}</span> for the wages </h3>
+
+
+  </mat-tab>
+  <mat-tab label="Tasks">
+
+    <h3>Currently you have: <span style="color: red;">{{noOfAllTasks}}</span> Tasks</h3>
+
+    <h3> <span style="color: red;">{{noOfAssingnedTasks}}</span> of them with assigned</h3>
+    <h3> <span style="color: red;">{{noOfUnassingnedTasks}}</span> of them unassigned</h3>
+    <h3> <span style="color: red;">{{noOfDoneTasks}}</span> of them with status: <span style="color: #4CAF50;">"DONE"</span></h3>
+    <h3><span style="color: red;">{{noOfNewTasks}}</span>  of them with status: <span style="color: #FFC107;">"NEW"</span></h3>
+
+  </mat-tab>
+  <mat-tab label="Vacation Requests"> Vacation- module to be implemented</mat-tab>
 </mat-tab-group>
 
