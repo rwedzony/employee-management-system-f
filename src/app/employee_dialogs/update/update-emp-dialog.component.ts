@@ -22,8 +22,11 @@ export class UpdateEmpDialogComponent implements OnInit {
     this.employee.firstName=this.data.firstName;
     this.employee.lastName=this.data.lastName;
     this.employee.email=this.data.email;
-    this.employee.occupation=this.data.occupaton;
+    this.employee.salary=this.data.salary;
+    this.employee.occupation=this.data.occupation;
+    this.employee.empAuthLevel=this.data.empAuthLevel;
     this.employee.currentMonthWorkingHours= this.data.currentMonthWorkingHours;
+    this.employee.remainingDayOffs=this.data.remainingDAyOffs;
   }
 
   onNoClick() {

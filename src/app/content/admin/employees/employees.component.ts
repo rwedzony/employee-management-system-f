@@ -8,6 +8,7 @@ import { MatDialog } from '@angular/material/dialog';
 import {DeleteEmpDialogComponent} from "../../../employee_dialogs/delete/delete-emp-dialog.component";
 import {AddEmpDialogComponent} from "../../../employee_dialogs/add/add-emp-dialog.component";
 import { UpdateEmpDialogComponent } from 'src/app/employee_dialogs/update/update-emp-dialog.component';
+import {ToastrService} from "ngx-toastr";
 
 
 
@@ -34,7 +35,8 @@ export class EmployeesComponent implements OnInit {
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
   constructor(private employeeService: EmployeeService,
-              public dialog: MatDialog) {}
+              public dialog: MatDialog,
+              private toastrService: ToastrService) {}
 
   ngOnInit() {
     this.dataSource.paginator=this.paginator;
@@ -49,11 +51,23 @@ export class EmployeesComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  editDialogEmployee(id: number, firstName: string, lastName: string, email: string, role: string, currentMonthWorkingHours: number) {
+  editDialogEmployee(id: number,
+                     firstName: string,
+                     lastName: string,
+                     email: string,
+                     salary: number,
+                     occupation: string,
+                     empAuthLevel:string,
+                     currentMonthWorkingHours: number,
+                     remainingDAyOffs: number
+                    ) {
 
     const dialogRef=this.dialog.open(UpdateEmpDialogComponent,{data:{id: id,
-      firstName:firstName,lastName:lastName,email:email,role:role,currentMonthWorkingHours:currentMonthWorkingHours}});
+      firstName:firstName,lastName:lastName,email:email,salary:salary,occupation:occupation,
+        empAuthLevel:empAuthLevel, currentMonthWorkingHours:currentMonthWorkingHours,
+        remainingDAyOffs: remainingDAyOffs}});
     dialogRef.afterClosed().subscribe(result => {
+
       this.getAllEmployees();
     });
   }

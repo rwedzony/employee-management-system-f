@@ -1,6 +1,6 @@
-<p>dashboarduser  FOR USERS works!</p>
-<mat-tab-group>
-  <mat-tab label="First"> This is  User  Content 1 </mat-tab>
-  <mat-tab label="Second"> This is User Content 2 </mat-tab>
-  <mat-tab label="Third"> This is User  Content 3 </mat-tab>
-</mat-tab-group>
+<h2>{{this.authService.getUserFirstName()}}, this is your Dashboard </h2>
+<h2>Tasks:</h2>
+<h3>Currently you have: {{noOfAllTasks}} Tasks assigned</h3>
+<h3> {{noOfDoneTasks}} of them with status: <span style="color: #4CAF50;">"NEW"</span></h3>
+<h3> {{noOfNewTasks}} of them with status: <span style="color: #FFC107;">"DONE"</span></h3>
+

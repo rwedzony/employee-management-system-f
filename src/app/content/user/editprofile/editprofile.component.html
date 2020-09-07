@@ -1,14 +1,14 @@
 <h2>Edit your Profile:</h2>
 <div class="example-container">
 <!-- edit first name -->
-  <mat-form-field appearance="fill">
+  <mat-form-field appearance="fill" [style.width.px]=200>
     <mat-label>first name</mat-label>
     <input matInput [(ngModel)]="employeeUser.firstName">
   </mat-form-field>
 
   <br>
   <!-- edit last name -->
-  <mat-form-field appearance="fill">
+  <mat-form-field appearance="fill" [style.width.px]=200>
     <mat-label>last name</mat-label>
     <input matInput [(ngModel)]="employeeUser.lastName">
   </mat-form-field>
@@ -16,7 +16,7 @@
   <br>
 
   <!-- edit email -->
-  <mat-form-field appearance="fill">
+  <mat-form-field appearance="fill" [style.width.px]=200>
     <mat-label>email</mat-label>
     <input matInput [(ngModel)]="employeeUser.email">
   </mat-form-field>
@@ -24,9 +24,9 @@
   <br>
   <!-- edit password -->
 
-  <mat-form-field appearance="fill">
+  <mat-form-field appearance="fill" [style.width.px]=200>
     <mat-label>Enter your password</mat-label>
-    <input matInput [(ngModel)]="employeeUser.password" [type]="hide ? 'password' : 'text'">
+    <input matInput [(ngModel)]="employeeUser.password" [type]="hide ? 'password' : 'text'" >
     <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
       <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
     </button>

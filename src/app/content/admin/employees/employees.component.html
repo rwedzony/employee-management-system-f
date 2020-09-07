@@ -64,11 +64,20 @@
       </mat-header-cell>
 
       <mat-cell *matCellDef="let row">
-        <button mat-icon-button color="accent" (click)="editDialogEmployee(row.id,row.firstName,row.lastName,row.email,row.role,row.currentMonthWorkingHours)">
+        <button mat-icon-button color="accent" [disabled]="row.empAuthLevel === 'ROLE_ADMIN'"
+                (click)="editDialogEmployee(row.id,
+                row.firstName,
+                row.lastName,
+                row.email,
+                row.salary,
+                row.occupation,
+                row.empAuthLevel,
+                row.currentMonthWorkingHours,
+                row.remainingDayOffs)">
           <mat-icon aria-label="Edit">edit</mat-icon>
         </button>
 
-        <button mat-icon-button color="accent" (click)="deleteDialogEmployee(row.id)">
+        <button mat-icon-button color="accent" [disabled]="row.empAuthLevel === 'ROLE_ADMIN'" (click)="deleteDialogEmployee(row.id)">
           <mat-icon aria-label="Delete">delete</mat-icon>
         </button>
       </mat-cell>

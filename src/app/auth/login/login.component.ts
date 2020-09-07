@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
       error => {
         this.toastrService.error("Bad Credentials!","ERROR",{
           timeOut:2000,
-          positionClass: 'toast-bottom-center',
+          positionClass: 'toast-top-center',
         });
       });
 

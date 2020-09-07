@@ -3,6 +3,10 @@ import {AuthService} from "../../../services/auth.service";
 import {Employeeuser} from "../../../datamodels/employeeuser";
 import {EmployeeService} from "../../../services/employee.service";
 import {Router} from "@angular/router";
+import {EdittaskdialogComponent} from "../../admin/edittaskdialog/edittaskdialog.component";
+import {EditprofiledialogComponent} from "../editprofiledialog/editprofiledialog.component";
+import {MatDialog} from "@angular/material/dialog";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-editprofile',
@@ -15,7 +19,9 @@ export class EditprofileComponent implements OnInit {
   employeeUser: Employeeuser;
   constructor(private authService: AuthService,
               private employeeService: EmployeeService,
-              private router: Router,) {
+              private router: Router,
+              public dialog: MatDialog,
+              private toastrService: ToastrService) {
   }
 
   ngOnInit(): void {
@@ -29,10 +35,31 @@ export class EditprofileComponent implements OnInit {
 
 
   submitChanges() {
-    this.employeeService.updatePatchEmployee(this.employeeUser).subscribe(
-        (value) => {this.authService.logout();
-          this.router.navigateByUrl('');},
-      (error) => {console.log('Error!!',error)},
+const dialogRef=this.dialog.open(EditprofiledialogComponent,{data:{employee: this.employeeUser}});
+    dialogRef.afterClosed().subscribe(result => {
+        this.toastrService.success("You edited data and can log in again!","Success",{
+          timeOut:2000,
+        });
+      this.authService.logout();
+      this.router.navigateByUrl('');},
+      (error) => {
+      this.toastrService.error("There was some connection error","Error",{
+        timeOut:2000,
+      });
+      },
       );
+
+// const dialogRef=this.dialog.open(EdittaskdialogComponent,{data:{id: id,
+//         description:description,status: status, startDate:startDate, endDate:endDate}});
+//     dialogRef.afterClosed().subscribe(result => {
+//       this.getAllassignedTasks();
+//       this.getAllUnassignedTasks();
+
+
+   // this.employeeService.updatePatchEmployee(this.employeeUser).subscribe(
+    //     (value) => {this.authService.logout();
+    //       this.router.navigateByUrl('');},
+    //   (error) => {console.log('Error!!',error)},
+    //   );
   }
 }

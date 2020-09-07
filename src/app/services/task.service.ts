@@ -30,6 +30,20 @@ export class TaskService {
     let url=this.basicUrl+'/'+'employees'+'/'+empID+'/'+'tasks';
     return this.httpClient.get(url);
   }
+
+  public getEmployeeTasksDone(empID: number) {
+    let url=this.basicUrl+'/'+'employees'+'/'+empID+'/'+'tasks'+'/'+'done';
+    return this.httpClient.get(url);
+  }
+  public getEmployeeTasksNew(empID: number) {
+    let url=this.basicUrl+'/'+'employees'+'/'+empID+'/'+'tasks'+'/'+'new';
+    return this.httpClient.get(url);
+  }
+  public getEmployeeTasksAll(empID: number) {
+    let url=this.basicUrl+'/'+'employees'+'/'+empID+'/'+'tasks'+'/'+'all';
+    return this.httpClient.get(url);
+  }
+
   public getAllUnassignedTasks() {
     let url=this.basicUrl+'/'+'tasks'+'/'+'unassigned';
     return this.httpClient.get(url);

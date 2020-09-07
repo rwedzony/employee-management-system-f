@@ -17,7 +17,7 @@ export class TasksuserComponent implements OnInit {
 
   ELEMENT_DATA: Task[];
 
-  displayedColumns: string[] = ['id', 'description',
+  displayedColumns: string[] = ['description',
     'status','startDate','endDate','actions'];
 
   dataSource = new MatTableDataSource<Task>(this.ELEMENT_DATA);

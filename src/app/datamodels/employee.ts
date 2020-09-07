@@ -3,6 +3,7 @@ export class Employee {
   firstName: string;
   lastName: string;
   email: string;
+  password: string;
   salary: number;
   occupation: string;
   empAuthLevel: string;

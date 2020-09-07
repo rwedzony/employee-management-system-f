@@ -75,7 +75,8 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumnsTa">
     </tr>
     <!-- ROWS-->
-    <tr mat-row *matRowDef="let row; columns: displayedColumnsTa;"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumnsTa;"
+        [ngClass]="{'task-complete': row.status==='DONE','task-new': row.status==='NEW'}"></tr>
 
   </table>
   <mat-paginator #firstPaginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
@@ -149,11 +150,11 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumnsTu">
     </tr>
     <!-- ROWS-->
-    <tr mat-row *matRowDef="let row; columns: displayedColumnsTu;"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumnsTu;"
+        [ngClass]="{'task-complete': row.status==='DONE','task-new': row.status==='NEW'}"></tr>
 
   </table>
   <mat-paginator #secondPaginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
 </div>
 <br>
-
-<button mat-raised-button color="primary" type="submit"  (click)="addNewTask()">Add new Task</button>
+<button class="add-task-button" mat-raised-button color="primary" type="submit"  (click)="addNewTask()">Add new Task</button>

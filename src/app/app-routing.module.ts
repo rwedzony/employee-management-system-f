@@ -11,6 +11,7 @@ import {TasksuserComponent} from "./content/user/tasksuser/tasksuser.component";
 import {DashboardadminComponent} from "./content/admin/dashboardadmin/dashboardadmin.component";
 import {TasksadminComponent} from "./content/admin/tasksadmin/tasksadmin.component";
 import {VacationsComponent} from "./content/admin/vacations/vacations.component";
+import {ContactadminComponent} from "./content/user/contactadmin/contactadmin.component";
 
 const routes: Routes = [{
   path: '', redirectTo: 'login',pathMatch:"full"},
@@ -33,7 +34,11 @@ const routes: Routes = [{
    {
      path: 'vacationreq',
      component: VacationrequestsComponent, canActivate: [AuthGuard]},
-  //Admin Profile Links
+      {
+      path: 'contactadmin',
+  component: ContactadminComponent, canActivate: [AuthGuard]},
+
+      //Admin Profile Links
    {
      path: 'dashboardadmin',
      component: DashboardadminComponent, canActivate: [AuthGuard]},
