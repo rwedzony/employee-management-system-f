@@ -12,7 +12,7 @@ Employees Management System is the full stack web app, which was created for sim
 + Toastr notifications
 
 ### Backend: [link to Backend](https://github.com/rwedzony/EmployeeManagementSystem)
-+ Spring Boot App
++ Spring Boot
 + Spring Data JPA
 + Spring Security
 + PosgreSQL database
