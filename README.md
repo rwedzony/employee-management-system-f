@@ -6,7 +6,7 @@ in AngularCLI and Backend in Java written in Spring Boot
 ## Development server
 
 
-![alternative text](https://github.com/rwedzony/EmployeeManagementSystem_Front/blob/master/src/assets/img/admin1.png)
+<!--![alternative text](https://github.com/rwedzony/EmployeeManagementSystem_Front/blob/master/src/assets/img/admin1.png)-->
 
 <!--![alternative text](https://github.com/rwedzony/EmployeeManagementSystem_Front/blob/master/src/assets/img/admin.png "Logo Title Text 1")-->
 
