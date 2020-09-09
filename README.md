@@ -5,6 +5,10 @@ It is a part of Employee management system, full stack web app which consist of 
 in AngularCLI and Backend in Java written in Spring Boot 
 ## Development server
 
+<!--![alternative text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")-->
+
+
+
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
