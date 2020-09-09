@@ -68,7 +68,7 @@ The other admin module is extended task manager:
 
 Admin can assign task to employee, edit task, and change task status from "DONE" to "NEW" as well as unassign. As tasks and employees are stored in DB using 1:N relationship, deleting particular empolyee indicates that all of his tasks become automatically unassigned.
 
-There is also Dashboard card in for admin:
+There is also dashboard card for admin:
 
 <p align="center">
   <img src="https://github.com/rwedzony/EmployeeManagementSystem_Front/blob/master/src/assets/img/admin_dashboard.png">
