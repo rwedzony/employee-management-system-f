@@ -21,7 +21,7 @@ Employees Management System is the full stack web app, which was created for sim
 
 ## Detailed app description
 
-The App offers two roles of the users: normal user and admin. As App was initially created as intern system, adding new users (who are basically employees at the same time) function is only limited to accounts which have "ADMIN" priviledges. Every user need to login in to grant access to App functionality:
+The app offers two roles of the users: normal user and admin. As app was initially created as intern system, adding new users (who are basically employees at the same time) function is only limited to accounts which have "ADMIN" priviledges. Every user need to log in to grant access to App functionality:
 
 <p align="center">
   <img src="https://github.com/rwedzony/EmployeeManagementSystem_Front/blob/master/src/assets/img/login_page.png">
@@ -33,27 +33,27 @@ Login with bad credentials is impossible, which is indicated by Toastr non-block
   <img src="https://github.com/rwedzony/EmployeeManagementSystem_Front/blob/master/src/assets/img/login_badcredentials.png">
 </p>
 
-App layout consist of sliding side navigation menu, which enables access to different functionality, from which the most important is "Edit Profile" and "Tasks". Edit profile simply allow to change user credentials (first name, last name, email or password). As App uses JWT token to authorize users, every change in credentials is followed by login request, as token is no loger walid.
+App layout consist of sliding side navigation menu, which enables access to different functionality, from which the most important is edit profile and tasks. Edit profile simply allow to change user credentials (first name, last name, email or password). As app uses JWT token to authorize users, every change in credentials is followed by logout from system action and login request, as token is no loger walid.
 
 <p align="center">
   <img src="https://github.com/rwedzony/EmployeeManagementSystem_Front/blob/master/src/assets/img/edit_profile.png">
 </p>
 
-### USER role app functionality
-Task module enables user to see, what tasks are assigned to him by Admin and which of them have "NEW" status. After completing task, user can mark it as "DONE":
+### User role app functionality
+Task module enables user to see, what tasks are assigned to him by admin and which of them have "NEW" status. After completing task, user can mark it as "DONE":
 
 <p align="center">
   <img src="https://github.com/rwedzony/EmployeeManagementSystem_Front/blob/master/src/assets/img/user_tasks.png">
 </p>
 
-User also can sent email to admin using his mail client. There is also plan to introduce "Vacation" module, where dayoff planining will take place. Dashboard is introduced to give user quick feedback of the task status: how many of them are assigned to particular user and what are their status:
+User can also sent email to admin using his email client. There is also plan to introduce "Vacation" module, where dayoff planining will take place. Dashboard is introduced to give user quick feedback of the task status: how many of them are assigned to particular user and what are their status:
 
 <p align="center">
   <img src="https://github.com/rwedzony/EmployeeManagementSystem_Front/blob/master/src/assets/img/user_dashboard.png">
 </p>
 
 ### ADMIN role app functionality
-Admin app functionality is more extended than user. First of all, admin has rigths to perform the CRUD operations on Employee list:
+Admin app functionality is more extended than user. First of all, admin has rigths to perform the CRUD operations on Employee list (of course CRUD operation of his own profile is not allowed- he must use edit profile as normal user instead)
 
 <p align="center">
   <img src="https://github.com/rwedzony/EmployeeManagementSystem_Front/blob/master/src/assets/img/employee_list.png">
@@ -67,3 +67,10 @@ The other admin module is extended task manager:
 
 Admin can assign task to employee, edit task, and change task status from "DONE" to "NEW" as well as unassign. As Task and Employee are in 1:M relationship, deleting particular empolyee indicates that all of his tasks become automatically unassigned.
 
+There is also Dashboard card in for admin:
+
+<p align="center">
+  <img src="https://github.com/rwedzony/EmployeeManagementSystem_Front/blob/master/src/assets/img/admin_dashboard.png">
+</p>
+
+which serves admin basic inforamtions of the current company state. This means how many employees are currently in DB, what is the sum of their salary. Also the detailed information about all system tasks is delivered: How many, how many of them are currently assign/ unassigned, how many has "NEW" as well as "DONE" status.
