@@ -11,7 +11,7 @@ Employees Management System is the full stack web app, which was created for sim
 + Angular Material UI Component library (mat-table, mat-buttons, mat-dialog, color theme Indigo-pink).
 + Toastr notifications
 
-### Backend: 
+### Backend: [link to Backend](https://github.com/rwedzony/EmployeeManagementSystem)
 + Spring Boot App
 + Spring Data JPA
 + PosgreSQL database
@@ -33,7 +33,7 @@ Login with bad credentials is impossible, which is indicated by Toastr non-block
   <img src="https://github.com/rwedzony/EmployeeManagementSystem_Front/blob/master/src/assets/img/login_badcredentials.png">
 </p>
 
-App layout consist of sliding side navigation menu, which enables access to different functionality, from which the most important is edit profile and tasks. Edit profile simply allow to change user credentials (first name, last name, email or password). As app uses JWT token to authorize users, every change in credentials is followed by logout from system action and login request, as token is no loger walid.
+App layout consist of sliding side navigation menu, which enables access to different functionality, from which the most important is edit profile and tasks. Edit profile simply allows to change user credentials (first name, last name, email or password). As app uses JWT token to authorize users, every change in credentials is followed by logout from system action and login request, as token is no loger walid.
 
 <p align="center">
   <img src="https://github.com/rwedzony/EmployeeManagementSystem_Front/blob/master/src/assets/img/edit_profile.png">
@@ -46,14 +46,14 @@ Task module enables user to see, what tasks are assigned to him by admin and whi
   <img src="https://github.com/rwedzony/EmployeeManagementSystem_Front/blob/master/src/assets/img/user_tasks.png">
 </p>
 
-User can also sent email to admin using his email client. There is also plan to introduce "Vacation" module, where dayoff planining will take place. Dashboard is introduced to give user quick feedback of the task status: how many of them are assigned to particular user and what are their status:
+User can also sent email to admin using his email client. There is also plan to introduce "Vacation" module, where dayoff planining will take place. Dashboard is introduced to give user quick feedback of the tasks status: how many of them are assigned to particular user and what are their status:
 
 <p align="center">
   <img src="https://github.com/rwedzony/EmployeeManagementSystem_Front/blob/master/src/assets/img/user_dashboard.png">
 </p>
 
-### ADMIN role app functionality
-Admin app functionality is more extended than user. First of all, admin has rigths to perform the CRUD operations on Employee list (of course CRUD operation of his own profile is not allowed- he must use edit profile as normal user instead)
+### Admin role app functionality
+Admin app functionality is more extended than user. First of all, admin has rigths to perform the CRUD operations on Employee list (of course CRUD operation of his own profile is not allowed- he has to use edit profile as normal user instead)
 
 <p align="center">
   <img src="https://github.com/rwedzony/EmployeeManagementSystem_Front/blob/master/src/assets/img/employee_list.png">
