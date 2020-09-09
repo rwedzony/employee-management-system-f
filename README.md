@@ -14,6 +14,7 @@ Employees Management System is the full stack web app, which was created for sim
 ### Backend: [link to Backend](https://github.com/rwedzony/EmployeeManagementSystem)
 + Spring Boot App
 + Spring Data JPA
++ Spring Security
 + PosgreSQL database
 + API secured by Spring Security and JWT generated token.
 + API docummented by Swagger
@@ -33,7 +34,7 @@ Login with bad credentials is impossible, which is indicated by Toastr non-block
   <img src="https://github.com/rwedzony/EmployeeManagementSystem_Front/blob/master/src/assets/img/login_badcredentials.png">
 </p>
 
-App layout consist of sliding side navigation menu, which enables access to different functionality, from which the most important is edit profile and tasks. Edit profile simply allows to change user credentials (first name, last name, email or password). As app uses JWT token to authorize users, every change in credentials is followed by logout from system action and login request, as token is no loger walid.
+App layout consist of sliding side navigation menu, which enables access to different functionality, from which the most important is edit profile and tasks. Edit profile simply allows to change user credentials (first name, last name, email or password). As app uses JWT token to authorize users, every change in credentials is followed by logout from system action and login request, as token is no loger valid.
 
 <p align="center">
   <img src="https://github.com/rwedzony/EmployeeManagementSystem_Front/blob/master/src/assets/img/edit_profile.png">
@@ -53,7 +54,7 @@ User can also sent email to admin using his email client. There is also plan to 
 </p>
 
 ### Admin role app functionality
-Admin app functionality is more extended than user. First of all, admin has rigths to perform the CRUD operations on Employee list (of course CRUD operation of his own profile is not allowed- he has to use edit profile as normal user instead)
+Admin app functionality is more extended than user. First of all, admin has rights to perform the CRUD operations on employees list (of course CRUD operations of his own profile is not allowed- he has to use edit profile as normal user instead)
 
 <p align="center">
   <img src="https://github.com/rwedzony/EmployeeManagementSystem_Front/blob/master/src/assets/img/employee_list.png">
@@ -65,7 +66,7 @@ The other admin module is extended task manager:
   <img src="https://github.com/rwedzony/EmployeeManagementSystem_Front/blob/master/src/assets/img/tasks_list.png">
 </p>
 
-Admin can assign task to employee, edit task, and change task status from "DONE" to "NEW" as well as unassign. As Task and Employee are in 1:M relationship, deleting particular empolyee indicates that all of his tasks become automatically unassigned.
+Admin can assign task to employee, edit task, and change task status from "DONE" to "NEW" as well as unassign. As tasks and employees are stored in DB in 1:n relationship, deleting particular empolyee indicates that all of his tasks become automatically unassigned.
 
 There is also Dashboard card in for admin:
 
