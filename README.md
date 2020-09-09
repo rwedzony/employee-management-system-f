@@ -47,7 +47,7 @@ Task module enables user to see, what tasks are assigned to him by admin and whi
   <img src="https://github.com/rwedzony/EmployeeManagementSystem_Front/blob/master/src/assets/img/user_tasks.png">
 </p>
 
-User can also sent email to admin using his email client. There is also plan to introduce "Vacation" module, where dayoff planing will take place. Dashboard is introduced to give user quick feedback of the tasks status: how many of them are assigned to particular user and what are their status:
+User can also sent email to admin using his email client. There is plan to introduce "Vacation" module, where dayoff planing will take place. Dashboard is introduced to give user quick feedback of the tasks status: how many of them are assigned to particular user and what are their status:
 
 <p align="center">
   <img src="https://github.com/rwedzony/EmployeeManagementSystem_Front/blob/master/src/assets/img/user_dashboard.png">
