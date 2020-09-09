@@ -74,4 +74,4 @@ There is also dashboard card for admin:
   <img src="https://github.com/rwedzony/EmployeeManagementSystem_Front/blob/master/src/assets/img/admin_dashboard.png">
 </p>
 
-which serves admin basic inforamtions of the current company state. This means how many employees are currently in DB, what is the sum of their salary. Also the detailed information about all system tasks is delivered: How many, how many of them are currently assign/ unassigned, how many has "NEW" as well as "DONE" status.
+which serves admin basic inforamtions of the current company state. This means how many employees are currently in DB, what is the sum of their salary. Also the detailed information about all system tasks is delivered: How many, how many of them are currently assigned / unassigned, how many has "NEW" as well as "DONE" status.
