@@ -1,38 +1,69 @@
-# EmployeeManagementSystem
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.5.
-It is a part of Employee management system, full stack web app which consist of Frontnd created 
-in AngularCLI and Backend in Java written in Spring Boot 
-## Development server
-
-
-<!--![alternative text](https://github.com/rwedzony/EmployeeManagementSystem_Front/blob/master/src/assets/img/admin1.png)-->
-
-<!--![alternative text](https://github.com/rwedzony/EmployeeManagementSystem_Front/blob/master/src/assets/img/admin.png "Logo Title Text 1")-->
+# Employees Management System 
+Employees Management System is the full stack web app, which was created for simplifying task managing and other daily routines which are everyday life in many companies. 
 
 <p align="center">
-  <img src="https://github.com/rwedzony/EmployeeManagementSystem_Front/blob/master/src/assets/img/admin1.png">
+  <img src="https://github.com/rwedzony/EmployeeManagementSystem_Front/blob/master/src/assets/img/tasks_list.png">
 </p>
 
+## Tech stack:
+### Frontend: 
++ Angular CLI v. 10
++ Angular Material UI Component library (mat-table, mat-buttons, mat-dialog, color theme Indigo-pink).
++ Toastr notifications
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Backend: 
++ Spring Boot App
++ Spring Data JPA
++ PosgreSQL database
++ API secured by Spring Security and JWT generated token.
++ API docummented by Swagger
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Detailed app description
 
-## Build
+The App offers two roles of the users: normal user and admin. As App was initially created as intern system, adding new users (who are basically employees at the same time) function is only limited to accounts which have "ADMIN" priviledges. Every user need to login in to grant access to App functionality:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+<p align="center">
+  <img src="https://github.com/rwedzony/EmployeeManagementSystem_Front/blob/master/src/assets/img/login_page.png">
+</p>
 
-## Running unit tests
+Login with bad credentials is impossible, which is indicated by Toastr non-blocking notification:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+<p align="center">
+  <img src="https://github.com/rwedzony/EmployeeManagementSystem_Front/blob/master/src/assets/img/login_badcredentials.png">
+</p>
 
-## Running end-to-end tests
+App layout consist of sliding side navigation menu, which enables access to different functionality, from which the most important is "Edit Profile" and "Tasks". Edit profile simply allow to change user credentials (first name, last name, email or password). As App uses JWT token to authorize users, every change in credentials is followed by login request, as token is no loger walid.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+<p align="center">
+  <img src="https://github.com/rwedzony/EmployeeManagementSystem_Front/blob/master/src/assets/img/edit_profile.png">
+</p>
 
-## Further help
+### USER role app functionality
+Task module enables user to see, what tasks are assigned to him by Admin and which of them have "NEW" status. After completing task, user can mark it as "DONE":
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+<p align="center">
+  <img src="https://github.com/rwedzony/EmployeeManagementSystem_Front/blob/master/src/assets/img/user_tasks.png">
+</p>
+
+User also can sent email to admin using his mail client. There is also plan to introduce "Vacation" module, where dayoff planining will take place. Dashboard is introduced to give user quick feedback of the task status: how many of them are assigned to particular user and what are their status:
+
+<p align="center">
+  <img src="https://github.com/rwedzony/EmployeeManagementSystem_Front/blob/master/src/assets/img/user_dashboard.png">
+</p>
+
+### ADMIN role app functionality
+Admin app functionality is more extended than user. First of all, admin has rigths to perform the CRUD operations on Employee list:
+
+<p align="center">
+  <img src="https://github.com/rwedzony/EmployeeManagementSystem_Front/blob/master/src/assets/img/employee_list.png">
+</p>
+
+The other admin module is extended task manager:
+
+<p align="center">
+  <img src="https://github.com/rwedzony/EmployeeManagementSystem_Front/blob/master/src/assets/img/tasks_list.png">
+</p>
+
+Admin can assign task to employee, edit task, and change task status from "DONE" to "NEW" as well as unassign. As Task and Employee are in 1:M relationship, deleting particular empolyee indicates that all of his tasks become automatically unassigned.
+
