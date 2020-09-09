@@ -22,7 +22,7 @@ Employees Management System is the full stack web app, which was created for sim
 
 ## Detailed app description
 
-The app offers two roles of the users: normal user and admin. As app was initially created as intern system, adding new users (who are basically employees at the same time) function is only limited to accounts which have "ADMIN" priviledges. Every user need to log in to grant access to App functionality:
+The app offers two roles of the users: normal user and admin. As app was initially created as intern system, adding new users (who are basically employees at the same time) function is only limited to accounts which have "ADMIN" priviledges. Every user need to log in to grant access to app functionality:
 
 <p align="center">
   <img src="https://github.com/rwedzony/EmployeeManagementSystem_Front/blob/master/src/assets/img/login_page.png">
