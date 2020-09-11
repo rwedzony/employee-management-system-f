@@ -19,6 +19,8 @@ Employees Management System is the full stack web app, which was created for sim
 + API secured by Spring Security and JWT generated token.
 + API docummented by Swagger
 
+## Frontend-Backend communication:
+For comunication purposes REST API in JSON format is used. API uses 5 methods of HTTP protocol: GET, POST, PUT, PATCH, and DELETE
 
 ## Detailed app description
 
