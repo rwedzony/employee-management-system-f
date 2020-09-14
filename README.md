@@ -1,5 +1,5 @@
 # Employees Management System 
-Employees Management System is the full stack web app, which was created for simplifying task managing and other daily routines which are everyday life in many companies. 
+Employees Management System is the 3 trier web application, which was created for simplifying task managing and other daily routines which are everyday life in many companies. 
 
 <p align="center">
   <img src="https://github.com/rwedzony/EmployeeManagementSystem_Front/blob/master/src/assets/img/tasks_list.png">
