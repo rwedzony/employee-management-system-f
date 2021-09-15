@@ -49,22 +49,12 @@ export class TaskService {
     let url=this.basicUrl+'/'+'tasks'+'/'+'new';
     return this.httpClient.get(url);
   }
-
-
-
-
-
-
-
-
-
+  
   public getEmployeeTasks(empID: number) {
     let url=this.basicUrl+'/'+'employees'+'/'+empID+'/'+'tasks';
     return this.httpClient.get(url);
   }
-
-
-
+  
   public getEmployeeTasksDone(empID: number) {
     let url=this.basicUrl+'/'+'employees'+'/'+empID+'/'+'tasks'+'/'+'done';
     return this.httpClient.get(url);
@@ -102,16 +92,7 @@ export class TaskService {
       (error) => {console.log('Error!!',error)},
       ()=>{console.log('end of values')});
   }
-
-  // updateEmployee(employee: Employee) {
-  //   let urlPut=this.urlGet+'/'+employee.id.toString();
-  //   this.httpClient.put(urlPut,employee).subscribe(
-  //     (value) => {console.log('Received value: ',value)},
-  //     (error) => {console.log('Error!!',error)},
-  //     ()=>{console.log('end of values')});
-  // }
-
-
+  
   changeTaskAssigment(taskId: number,assign: boolean){
     let url=this.basicUrl+'/'+'tasks'+'/'+taskId;
     return this.httpClient.patch(url,{"assigned": assign });
@@ -120,18 +101,14 @@ export class TaskService {
     let url=this.basicUrl+'/'+'tasks'+'/'+taskId;
     return this.httpClient.patch(url,{"employeeId": employeeId });
   }
-
-
+  
   addTask(task: Task) {
    let url=this.basicUrl+'/'+'tasks';
     this.httpClient.post(url,task).subscribe(
       (value) => {console.log('Received value: ',value)},
       (error) => {console.log('Error!!',error)},
       ()=>{console.log('end of values')});
-
-
   }
-
 
   deleteTaskById(id: any) {
     let url=this.basicUrl+'/'+'tasks'+'/'+id.toString();
