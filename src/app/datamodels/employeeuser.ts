@@ -4,5 +4,4 @@ export class Employeeuser {
   lastName: string;
   email: string;
   password:string;
-
 }
