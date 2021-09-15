@@ -1,5 +1,6 @@
 <h2>Edit your Profile:</h2>
 <div class="example-container">
+  
 <!-- edit first name -->
   <mat-form-field appearance="fill" [style.width.px]=200>
     <mat-label>first name</mat-label>
@@ -23,7 +24,6 @@
 
   <br>
   <!-- edit password -->
-
   <mat-form-field appearance="fill" [style.width.px]=200>
     <mat-label>Enter your password</mat-label>
     <input matInput [(ngModel)]="employeeUser.password" [type]="hide ? 'password' : 'text'" >
@@ -31,8 +31,8 @@
       <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
     </button>
   </mat-form-field>
-   <br>
+  
+  <br>
   <button mat-raised-button color="primary" type="submit"   (click)="submitChanges()">Save Data</button>
-
 
 </div>
