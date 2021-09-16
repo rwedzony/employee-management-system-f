@@ -26,6 +26,7 @@ export class TaskService {
     let url=this.basicUrl+'/'+'tasks';
     return this.httpClient.get(url);
   }
+  
   public getAllTasksCount() {
     let url=this.basicUrl+'/'+'tasks'+'/'+'count';
     return this.httpClient.get(url);
@@ -45,6 +46,7 @@ export class TaskService {
     let url=this.basicUrl+'/'+'tasks'+'/'+'done';
     return this.httpClient.get(url);
   }
+  
   public getAllNewTasksCount() {
     let url=this.basicUrl+'/'+'tasks'+'/'+'new';
     return this.httpClient.get(url);
@@ -118,6 +120,5 @@ export class TaskService {
       (error) => {console.log('Error!!',error)},
       ()=>{console.log('end of values')}
     );
-
   }
 }
