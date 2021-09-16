@@ -11,8 +11,7 @@ import {BaseurlService} from "./baseurl.service";
   providedIn: 'root'
 })
 export class AuthService {
-
-
+  
   loginURL : string;
 
   constructor(private httpClient: HttpClient,
@@ -64,13 +63,12 @@ export class AuthService {
   isLoggedIn(): boolean {
     return this.getJwtToken() != null;
   }
+  
   isAdmin(): boolean{
     if(this.localStorage.retrieve('role') ==="ROLE_ADMIN")
       return true;
     else{
       return false;
     }
-
   }
-
 }
