@@ -13,6 +13,7 @@ import {ToastrService} from "ngx-toastr";
   templateUrl: './editprofile.component.html',
   styleUrls: ['./editprofile.component.scss']
 })
+
 export class EditprofileComponent implements OnInit {
 
   hide=true;
@@ -33,7 +34,6 @@ export class EditprofileComponent implements OnInit {
     this.employeeUser.password='';
   }
 
-
   submitChanges() {
 const dialogRef=this.dialog.open(EditprofiledialogComponent,{data:{employee: this.employeeUser}});
     dialogRef.afterClosed().subscribe(result => {
@@ -48,18 +48,5 @@ const dialogRef=this.dialog.open(EditprofiledialogComponent,{data:{employee: thi
       });
       },
       );
-
-// const dialogRef=this.dialog.open(EdittaskdialogComponent,{data:{id: id,
-//         description:description,status: status, startDate:startDate, endDate:endDate}});
-//     dialogRef.afterClosed().subscribe(result => {
-//       this.getAllassignedTasks();
-//       this.getAllUnassignedTasks();
-
-
-   // this.employeeService.updatePatchEmployee(this.employeeUser).subscribe(
-    //     (value) => {this.authService.logout();
-    //       this.router.navigateByUrl('');},
-    //   (error) => {console.log('Error!!',error)},
-    //   );
   }
 }
