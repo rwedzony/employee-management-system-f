@@ -1,8 +1,6 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import {EmployeeService} from '../../../services/employee.service';
-import {htmlAstToRender3Ast} from '@angular/compiler/src/render3/r3_template_transform';
-import {Employee} from '../../../datamodels/employee';
 import {TaskService} from '../../../services/task.service';
 
 interface EmployeeToDisplay {
@@ -10,6 +8,7 @@ interface EmployeeToDisplay {
   firstName: string;
   lastName: string;
 }
+
 
 @Component({
   selector: 'app-assigntaskdialog',
