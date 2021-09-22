@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 
 @Component({
@@ -8,13 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VacationrequestsComponent implements OnInit {
 
-  startDate='';
-  constructor() { }
+  startDate = '';
+
+  constructor() {
+  }
 
 
   ngOnInit(): void {
   }
 
-  AddVacation() {
-  }
 }
