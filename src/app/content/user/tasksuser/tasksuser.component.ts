@@ -37,17 +37,17 @@ export class TasksuserComponent implements OnInit {
     this.getAllEmployeeTask();
   }
 
-  applyFilter(filterValue: string) {
+  applyFilter(filterValue: string): void {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  public getAllEmployeeTask() {
-    let resp = this.taskService.getEmployeeTasks(this.authService.getUserId());
+  public getAllEmployeeTask(): void {
+    const resp = this.taskService.getEmployeeTasks(this.authService.getUserId());
     resp.subscribe(tasks => this.dataSource.data = tasks as Task[]);
   }
 
-  completeTask(id: number) {
-    let resp = this.taskService.updateTask(id, 'DONE');
+  completeTask(id: number): void {
+    const resp = this.taskService.updateTask(id, 'DONE');
     resp.subscribe((value) => {
         this.getAllEmployeeTask();
         this.toastrService.success('You completed the Task!', 'Success', {
@@ -60,6 +60,5 @@ export class TasksuserComponent implements OnInit {
         });
       },
     );
-
   }
 }
