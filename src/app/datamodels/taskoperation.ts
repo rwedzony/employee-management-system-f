@@ -1,3 +1,3 @@
-export class Taskoperation{
-  status:string;
+export class Taskoperation {
+  status: string;
 }
