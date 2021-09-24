@@ -1,6 +1,6 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
-import {EmployeeService} from "../../../services/employee.service";
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
+import {EmployeeService} from '../../../services/employee.service';
 
 @Component({
   selector: 'app-editprofiledialog',
@@ -11,16 +11,17 @@ export class EditprofiledialogComponent implements OnInit {
 
   constructor(public dialogRef: MatDialogRef<EditprofiledialogComponent>,
               @Inject(MAT_DIALOG_DATA) public data: any,
-              private employeeService: EmployeeService) { }
+              private employeeService: EmployeeService) {
+  }
 
   ngOnInit(): void {
   }
 
-  onNoClick() {
+  onNoClick(): any {
     this.dialogRef.close();
   }
 
-  confirmEdit() {
+  confirmEdit(): any {
     this.employeeService.updatePatchEmployee(this.data.employee);
     this.dialogRef.close();
   }
