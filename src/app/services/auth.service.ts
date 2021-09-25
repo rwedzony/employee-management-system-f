@@ -1,11 +1,11 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {filter, map} from "rxjs/operators";
+import {HttpClient} from '@angular/common/http';
+import {map} from 'rxjs/operators';
 
-import {LoginRequestPayload} from "../datamodels/login-request.payload";
-import {LoginResponsePayload} from "../datamodels/login-response.payload";
+import {LoginRequestPayload} from '../datamodels/login-request.payload';
+import {LoginResponsePayload} from '../datamodels/login-response.payload';
 import {LocalStorageService} from 'ngx-webstorage';
-import {BaseurlService} from "./baseurl.service";
+import {BaseurlService} from './baseurl.service';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +17,7 @@ export class AuthService {
   constructor(private httpClient: HttpClient,
               private localStorage: LocalStorageService,
               private baseurl: BaseurlService) {
-    this.loginURL = this.baseurl.getBaseUrl() + '/auth/login'
+    this.loginURL = this.baseurl.getBaseUrl() + '/auth/login';
   }
 
   login(loginRequestPayload: LoginRequestPayload): any {
@@ -71,10 +71,9 @@ export class AuthService {
   }
 
   isAdmin(): boolean {
-    if (this.localStorage.retrieve('role') === "ROLE_ADMIN") {
+    if (this.localStorage.retrieve('role') === 'ROLE_ADMIN') {
       return true;
-    }
-    else {
+    } else {
       return false;
     }
   }
