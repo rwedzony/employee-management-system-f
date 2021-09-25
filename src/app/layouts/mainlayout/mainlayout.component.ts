@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-mainlayout',
@@ -8,12 +8,14 @@ import { Component, OnInit } from '@angular/core';
 export class MainlayoutComponent implements OnInit {
 
   sideBarOpen = true;
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
 
-  sideBarToggler($event: any) {
+  sideBarToggler($event: any): void {
     this.sideBarOpen = !this.sideBarOpen;
   }
 }
