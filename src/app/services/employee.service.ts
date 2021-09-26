@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Employee} from '../datamodels/employee';
-import {BaseurlService} from "./baseurl.service";
-import {Employeeuser} from "../datamodels/employeeuser";
+import {BaseurlService} from './baseurl.service';
+import {Employeeuser} from '../datamodels/employeeuser';
 
 @Injectable({
   providedIn: 'root'
@@ -54,10 +54,10 @@ export class EmployeeService {
     const urlPatch = this.urlGet + '/' + employeeuser.id.toString();
     this.httpClient.patch(urlPatch, employeeuser, this.httpOptions).subscribe(
       (value) => {
-        console.log('Connection okey')
+        console.log('Connection okey');
       },
       (error) => {
-        console.log('Something went wrong')
+        console.log('Something went wrong');
       },
     );
   }
