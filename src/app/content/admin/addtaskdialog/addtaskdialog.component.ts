@@ -1,10 +1,7 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MatDialogRef} from '@angular/material/dialog';
-import {EmployeeService} from '../../../services/employee.service';
 import {TaskService} from '../../../services/task.service';
-import {Employee} from '../../../datamodels/employee';
 import {Task} from '../../../datamodels/task';
-import {MatDatepicker} from '@angular/material/datepicker';
 
 @Component({
   selector: 'app-addtaskdialog',
