@@ -30,8 +30,6 @@ export class AddEmpDialogComponent implements OnInit {
     this.employee.empAuthLevel = 'ROLE_USER';
     this.employee.currentMonthWorkingHours = 168;
     this.employee.remainingDayOffs = 22;
-
-
   }
 
   onNoClick(): void {
