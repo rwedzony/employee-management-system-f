@@ -2,24 +2,21 @@
 
 <form class="mat-dialog-content" (ngSubmit)="submit" #formControl="ngForm">
 
-<!--descritpion-->
   <div class="form">
     <mat-form-field color="accent">
       <mat-label></mat-label>
-      <input matInput #input class="form-control" placeholder="description" [(ngModel)]="task.description" name="description"  required >
+      <input matInput #input class="form-control" placeholder="description" [(ngModel)]="task.description"
+             name="description" required>
     </mat-form-field>
   </div>
 
-<!-- status-->
-  <mat-form-field appearance="fill" >
+  <mat-form-field appearance="fill">
     <mat-label>Status</mat-label>
     <mat-select [(value)]="task.status" required>
       <mat-option value="NEW">NEW</mat-option>
       <mat-option value="DONE">DONE</mat-option>
     </mat-select>
   </mat-form-field>
-
-<!--start date-->
 
   <div class="form">
     <mat-form-field class="example-full-width" appearance="fill">
@@ -32,8 +29,6 @@
     </mat-form-field>
   </div>
 
-  <!--end date-->
-
   <div class="form">
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Choose a end date</mat-label>
@@ -45,9 +40,10 @@
     </mat-form-field>
   </div>
 
-
   <div mat-dialog-actions>
-    <button mat-button color="primary" [type]="submit" [disabled]="!formControl.valid" [mat-dialog-close]="1" (click)="confirmEdit()">Save</button>
+    <button mat-button color="primary" [type]="submit" [disabled]="!formControl.valid" [mat-dialog-close]="1"
+            (click)="confirmEdit()">Save
+    </button>
     <button mat-button color="accent" (click)="onNoClick()" tabindex="-1">Cancel</button>
   </div>
 </form>
