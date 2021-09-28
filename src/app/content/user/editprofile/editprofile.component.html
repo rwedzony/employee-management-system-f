@@ -1,13 +1,13 @@
 <h2>Edit your Profile:</h2>
 <div class="example-container">
-  
+
   <mat-form-field appearance="fill" [style.width.px]=200>
     <mat-label>first name</mat-label>
     <input matInput [(ngModel)]="employeeUser.firstName">
   </mat-form-field>
 
   <br>
-  
+
   <mat-form-field appearance="fill" [style.width.px]=200>
     <mat-label>last name</mat-label>
     <input matInput [(ngModel)]="employeeUser.lastName">
@@ -15,23 +15,23 @@
 
   <br>
 
-  <!-- edit email -->
   <mat-form-field appearance="fill" [style.width.px]=200>
     <mat-label>email</mat-label>
     <input matInput [(ngModel)]="employeeUser.email">
   </mat-form-field>
 
   <br>
-  
+
   <mat-form-field appearance="fill" [style.width.px]=200>
     <mat-label>Enter your password</mat-label>
-    <input matInput [(ngModel)]="employeeUser.password" [type]="hide ? 'password' : 'text'" >
-    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+    <input matInput [(ngModel)]="employeeUser.password" [type]="hide ? 'password' : 'text'">
+    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide">
       <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
     </button>
   </mat-form-field>
-  
+
   <br>
-  <button mat-raised-button color="primary" type="submit"   (click)="submitChanges()">Save Data</button>
+  <button mat-raised-button color="primary" type="submit" (click)="submitChanges()">Save Data</button>
 
 </div>
