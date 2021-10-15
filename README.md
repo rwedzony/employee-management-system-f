@@ -109,3 +109,7 @@ There is also dashboard card for admin:
 <br>
 
 which serves admin basic inforamtions of the current company state. This means how many employees are currently in DB, what is the sum of their salary. Also the detailed information about all system tasks is delivered: How many, how many of them are currently assigned / unassigned, how many has "NEW" as well as "DONE" status.
+
+## TODO
+1. Add Tests
+2. Add Vacation planning calendar
