@@ -113,3 +113,4 @@ which serves admin basic inforamtions of the current company state. This means h
 ## TODO
 1. Add unit tests
 2. Add Vacation planning calendar
+3. Refactor components
