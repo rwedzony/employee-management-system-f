@@ -114,3 +114,4 @@ which serves admin basic inforamtions of the current company state. This means h
 1. Add unit tests
 2. Add Vacation planning calendar
 3. Refactor components
+4. Add separate app docs instead of readme
